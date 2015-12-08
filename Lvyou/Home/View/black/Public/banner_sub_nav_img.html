@@ -1,0 +1,10 @@
+<ul>
+	<volist name="cl['goods']" id='good'>
+	<li>
+		<a href="{:U('goods/info', array('id' => $good['goods_id']))}" title="{$good.title}" class="img">
+			<img alt="{$good.title}" title="{$good.title}" src="{$good.pic_url}" original="{$good.pic_url}" style="display: inline;" width="252" >
+		</a>
+		<p><a href="{:U('goods/info', array('id' => $good['goods_id']))}" title="{$good.title}">{$good.title}</a></p>
+	</li>
+	</volist>
+</ul>

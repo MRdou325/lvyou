@@ -1,0 +1,2043 @@
+[ 2015-11-28T21:50:08+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/Index/index.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:2.263315s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.014184s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.217658s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000304s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.252952s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000239s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.247693s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000314s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.634540s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `ly_banner` [ RunTime:1.746405s ]
+SQL: SELECT * FROM `ly_banner` WHERE ( `status` = 1 ) ORDER BY `sort` ASC  [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `ly_ad` [ RunTime:1.611666s ]
+ERR: 1146:Table 'lvyou.ly_ad' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ly_ad`
+SQL: SELECT * FROM `ly_ad` WHERE ( `state` = 1 ) ORDER BY `order` DESC  [ RunTime:0.000819s ]
+ERR: 1146:Table 'lvyou.ly_ad' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ly_ad` WHERE ( `state` = 1 ) ORDER BY `order` DESC 
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\IndexController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_category_goods` [ RunTime:0.373845s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 0 ) AND ( is_home = 1 or is_home_banner = 1 ) ORDER BY sort ASC  [ RunTime:0.000412s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.517627s ]
+SQL: SELECT `id`,`category_name`,`is_home` FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 1 )  [ RunTime:0.000254s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( status = 1 and cate_id in (1,15,16,17) ) ORDER BY `sort` DESC,goods_id DESC LIMIT 8   [ RunTime:0.101184s ]
+SQL: SELECT `id`,`category_name`,`is_home` FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 2 )  [ RunTime:0.000309s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( status = 1 and cate_id in (2,18,19,20) ) ORDER BY `sort` DESC,goods_id DESC LIMIT 8   [ RunTime:0.000288s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\GoodsModel.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.095628s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000380s ]
+SQL: SHOW COLUMNS FROM `ly_document` [ RunTime:0.456569s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 1 ) LIMIT 10   [ RunTime:0.063561s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 2 ) LIMIT 10   [ RunTime:0.000296s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 39 ) LIMIT 10   [ RunTime:0.000201s ]
+SQL: SHOW COLUMNS FROM `ly_page` [ RunTime:0.855376s ]
+SQL: SELECT * FROM `ly_page` WHERE ( `status` = 1 ) AND ( `ishome` = 1 ) ORDER BY sort  [ RunTime:0.094737s ]
+SQL: SHOW COLUMNS FROM `ly_category_goods` [ RunTime:0.158477s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 0 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000323s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 1 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000252s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 15 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000212s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 16 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000210s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 17 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000249s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 2 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000226s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 18 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.001167s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 19 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000247s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 20 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000252s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SHOW COLUMNS FROM `ly_orders` [ RunTime:0.373401s ]
+SQL: SELECT * FROM `ly_orders` ORDER BY createtime DESC LIMIT 12   [ RunTime:0.000251s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000607s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000713s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:1.962596s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.962731s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.203243s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.203380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.083244s ]
+INFO: [ app_end ] --END-- [ RunTime:0.083354s ]
+
+[ 2015-11-28T21:50:10+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Admin/Goods/index.html
+SQL: SHOW COLUMNS FROM `ly_menu` [ RunTime:0.616003s ]
+SQL: SELECT * FROM `ly_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.176859s ]
+SQL: SELECT `id` FROM `ly_menu` WHERE ( url like '%Goods/index%' ) LIMIT 1   [ RunTime:0.000827s ]
+SQL: SHOW COLUMNS FROM `ly_menu` [ RunTime:0.003672s ]
+SQL: SELECT `id`,`pid`,`title` FROM `ly_menu` WHERE ( id=131 ) LIMIT 1   [ RunTime:0.000283s ]
+SQL: SELECT DISTINCT  `group` FROM `ly_menu` WHERE ( pid = 131 )  [ RunTime:0.000389s ]
+SQL: SELECT `id`,`url` FROM `ly_menu` WHERE ( `pid` = 131 ) AND ( `hide` = 0 )  [ RunTime:0.000343s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '周边' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000346s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '采集' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000309s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '分类' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000406s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '专题' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000326s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '标签' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000327s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '攻略' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000336s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '资讯' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000336s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '美食' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000319s ]
+NOTIC: [8] Undefined variable: where D:\wamp\www\lvyou\Lvyou\Admin\Controller\GoodsController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004241s ]
+NOTIC: [8] Undefined index: where D:\wamp\www\lvyou\Lvyou\Admin\Controller\AdminController.class.php 第 437 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ly_goods` LIMIT 1   [ RunTime:0.000193s ]
+SQL: SELECT `goods_id`,`goods_type`,`num_iid`,`title`,`cate_id`,`tid`,`add_id`,`add_uname`,`city`,`days`,`aheaddays`,`traffic`,`invite`,`audition`,`maxdays`,`discount_price`,`price`,`child_price`,`pic_url`,`item_body`,`status`,`seo_title`,`seo_keywords`,`seo_description`,`ctime`,`hits`,`favor`,`sort`,`tags` FROM `ly_goods` ORDER BY sort desc , goods_id desc LIMIT 0,10   [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `ly_category_goods` [ RunTime:0.080697s ]
+NOTIC: [8] Undefined variable: where D:\wamp\www\lvyou\Lvyou\Admin\Model\CategoryGoodsModel.class.php 第 13 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE (  status='1' ) ORDER BY p_id,sort  [ RunTime:0.000446s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000550s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000675s ]
+NOTIC: [8] Undefined variable: meta_title D:\wamp\www\lvyou\Runtime\Cache\Admin\353933ef32884c0fc1221009ac460075.php 第 5 行.
+SQL: SHOW COLUMNS FROM `ly_goods_type` [ RunTime:0.169498s ]
+SQL: SELECT * FROM `ly_goods_type` WHERE ( `id` = 2 ) LIMIT 1   [ RunTime:0.000299s ]
+SQL: SELECT * FROM `ly_goods_type` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000223s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.474289s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.474386s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000577s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000855s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000940s ]
+
+[ 2015-11-28T22:12:57+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.013857s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.027468s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.029978s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.029549s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000261s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.032326s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.036206s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.042747s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000416s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.025805s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000315s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004178s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.043906s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.161601s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.047306s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000342s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003975s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000361s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.044512s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000350s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.029508s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000245s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000511s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000603s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 189 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 209 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 225 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.212410s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.212498s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.034667s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.034768s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.030719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.030828s ]
+
+[ 2015-11-28T22:17:02+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004189s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000390s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.004590s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000311s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004594s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000266s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.006277s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.004621s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000366s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003999s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.005524s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000530s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000442s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003810s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000359s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004444s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.001578s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.005263s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000280s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.005891s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000209s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000606s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000712s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 189 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 209 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 225 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.077542s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.077646s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000738s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000813s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000955s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001032s ]
+
+[ 2015-11-28T22:19:23+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003810s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003370s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000298s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004841s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000251s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004191s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000422s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003871s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000365s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003446s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.016208s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000439s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000339s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.015057s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000212s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004378s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000391s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.004691s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000214s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003485s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000161s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000540s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000643s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 189 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 209 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 228 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.036250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036345s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000825s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000906s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001018s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001101s ]
+
+[ 2015-11-28T22:22:21+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.014456s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000349s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.004554s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004130s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000291s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.013607s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003705s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000293s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003242s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000234s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004373s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000392s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000311s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.004118s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.005615s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000363s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003148s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000224s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003144s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000146s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000513s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000613s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 189 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 209 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 228 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.033503s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033590s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000552s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000624s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000810s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000884s ]
+
+[ 2015-11-28T22:28:13+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004325s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000344s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003266s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000273s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004818s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000217s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004068s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000365s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003133s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000252s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003706s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000293s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003874s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000570s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000409s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003891s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000212s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004060s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000361s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003215s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000204s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003090s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000129s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000515s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000612s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 189 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 209 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 228 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.029773s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029859s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000798s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000872s ]
+
+[ 2015-11-28T22:28:15+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004231s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000334s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003438s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003789s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000212s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004605s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.004008s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003189s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.026972s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000387s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000289s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003192s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000202s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004550s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000377s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003281s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000204s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003087s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000181s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000514s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000616s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 189 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 209 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 228 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.033948s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034036s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000467s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000794s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000867s ]
+
+[ 2015-11-28T22:36:12+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003521s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.004172s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003815s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000211s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003850s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.001019s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003347s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003141s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003891s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000378s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003607s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000230s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004305s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000343s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003165s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003106s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000152s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000510s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000613s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 189 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 209 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 228 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.029615s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029703s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000548s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000935s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001016s ]
+
+[ 2015-11-28T22:38:45+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003566s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000322s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003637s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000288s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003820s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000240s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003841s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000371s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.005032s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003282s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003817s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000679s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000467s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003226s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000240s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004141s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000390s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003759s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003073s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000141s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001140s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 189 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 209 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 228 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030655s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030742s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000587s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000797s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000870s ]
+
+[ 2015-11-28T22:39:08+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/Index/index.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004152s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.002110s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.051122s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.009451s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000298s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003629s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.001293s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003625s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `ly_banner` [ RunTime:0.019626s ]
+SQL: SELECT * FROM `ly_banner` WHERE ( `status` = 1 ) ORDER BY `sort` ASC  [ RunTime:0.000464s ]
+SQL: SHOW COLUMNS FROM `ly_ad` [ RunTime:0.013521s ]
+ERR: 1146:Table 'lvyou.ly_ad' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ly_ad`
+SQL: SELECT * FROM `ly_ad` WHERE ( `state` = 1 ) ORDER BY `order` DESC  [ RunTime:0.000317s ]
+ERR: 1146:Table 'lvyou.ly_ad' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ly_ad` WHERE ( `state` = 1 ) ORDER BY `order` DESC 
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\IndexController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_category_goods` [ RunTime:0.004781s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 0 ) AND ( is_home = 1 or is_home_banner = 1 ) ORDER BY sort ASC  [ RunTime:0.000382s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.005292s ]
+SQL: SELECT `id`,`category_name`,`is_home` FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 1 )  [ RunTime:0.000284s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( status = 1 and cate_id in (1,15,16,17) ) ORDER BY `sort` DESC,goods_id DESC LIMIT 8   [ RunTime:0.000761s ]
+SQL: SELECT `id`,`category_name`,`is_home` FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 2 )  [ RunTime:0.001531s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( status = 1 and cate_id in (2,18,19,20) ) ORDER BY `sort` DESC,goods_id DESC LIMIT 8   [ RunTime:0.000289s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\GoodsModel.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.005175s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000376s ]
+SQL: SHOW COLUMNS FROM `ly_document` [ RunTime:0.035125s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 1 ) LIMIT 10   [ RunTime:0.004863s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 2 ) LIMIT 10   [ RunTime:0.000242s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 39 ) LIMIT 10   [ RunTime:0.000205s ]
+SQL: SHOW COLUMNS FROM `ly_page` [ RunTime:0.037581s ]
+SQL: SELECT * FROM `ly_page` WHERE ( `status` = 1 ) AND ( `ishome` = 1 ) ORDER BY sort  [ RunTime:0.012859s ]
+SQL: SHOW COLUMNS FROM `ly_category_goods` [ RunTime:0.004171s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 0 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000317s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 1 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000256s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 15 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000217s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 16 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000215s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 17 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000953s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 2 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000271s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 18 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000218s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 19 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000216s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 20 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000209s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SHOW COLUMNS FROM `ly_orders` [ RunTime:0.026880s ]
+SQL: SELECT * FROM `ly_orders` ORDER BY createtime DESC LIMIT 12   [ RunTime:0.000238s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000574s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000670s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.091120s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.091241s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.004609s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004712s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000877s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000964s ]
+
+[ 2015-11-28T22:39:30+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/Index/index.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004646s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000319s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003653s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004694s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000231s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.004904s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003366s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000237s ]
+SQL: SHOW COLUMNS FROM `ly_banner` [ RunTime:0.003660s ]
+SQL: SELECT * FROM `ly_banner` WHERE ( `status` = 1 ) ORDER BY `sort` ASC  [ RunTime:0.000295s ]
+SQL: SHOW COLUMNS FROM `ly_ad` [ RunTime:0.003068s ]
+ERR: 1146:Table 'lvyou.ly_ad' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ly_ad`
+SQL: SELECT * FROM `ly_ad` WHERE ( `state` = 1 ) ORDER BY `order` DESC  [ RunTime:0.000259s ]
+ERR: 1146:Table 'lvyou.ly_ad' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ly_ad` WHERE ( `state` = 1 ) ORDER BY `order` DESC 
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\IndexController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_category_goods` [ RunTime:0.004749s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 0 ) AND ( is_home = 1 or is_home_banner = 1 ) ORDER BY sort ASC  [ RunTime:0.000364s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.019953s ]
+SQL: SELECT `id`,`category_name`,`is_home` FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 1 )  [ RunTime:0.000323s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( status = 1 and cate_id in (1,15,16,17) ) ORDER BY `sort` DESC,goods_id DESC LIMIT 8   [ RunTime:0.000365s ]
+SQL: SELECT `id`,`category_name`,`is_home` FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 2 )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( status = 1 and cate_id in (2,18,19,20) ) ORDER BY `sort` DESC,goods_id DESC LIMIT 8   [ RunTime:0.000262s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\GoodsModel.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004401s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000319s ]
+SQL: SHOW COLUMNS FROM `ly_document` [ RunTime:0.004312s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 1 ) LIMIT 10   [ RunTime:0.000313s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 2 ) LIMIT 10   [ RunTime:0.000227s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 39 ) LIMIT 10   [ RunTime:0.000200s ]
+SQL: SHOW COLUMNS FROM `ly_page` [ RunTime:0.004752s ]
+SQL: SELECT * FROM `ly_page` WHERE ( `status` = 1 ) AND ( `ishome` = 1 ) ORDER BY sort  [ RunTime:0.000402s ]
+SQL: SHOW COLUMNS FROM `ly_category_goods` [ RunTime:0.003897s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 0 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000300s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 1 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000262s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 15 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000225s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 16 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000241s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 17 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000260s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 2 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000237s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 18 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000223s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 19 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000205s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 20 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000236s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SHOW COLUMNS FROM `ly_orders` [ RunTime:0.003735s ]
+SQL: SELECT * FROM `ly_orders` ORDER BY createtime DESC LIMIT 12   [ RunTime:0.000218s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000595s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000697s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.052717s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052825s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000544s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000806s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2015-11-28T22:39:57+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004537s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000305s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.004032s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000300s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004110s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000224s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004017s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000326s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003098s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000263s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003515s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004131s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000374s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000301s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.006763s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004153s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000392s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.004222s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000341s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.004232s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000133s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000536s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000639s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 189 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 209 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 228 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.056894s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056982s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000726s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000808s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000977s ]
+
+[ 2015-11-28T22:41:46+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004454s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000314s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003999s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000274s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.005441s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000269s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004761s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000443s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003978s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000316s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003991s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000238s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004214s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000994s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000336s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.005118s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000266s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004622s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000369s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.004290s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000271s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.004109s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000115s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000564s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000672s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 207 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 226 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.031985s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032081s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000628s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000880s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000957s ]
+
+[ 2015-11-28T22:43:10+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003666s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003331s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000248s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004860s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000209s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004283s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003048s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003033s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000222s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004645s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000371s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000292s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003155s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000203s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003747s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000332s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003236s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000205s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.004314s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000178s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000513s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000611s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 227 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030597s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030705s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000596s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000832s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000908s ]
+
+[ 2015-11-28T22:48:01+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003407s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000257s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003087s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000214s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003666s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000202s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004444s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000319s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003204s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.002896s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000196s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004277s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000359s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000295s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003115s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003924s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000332s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003532s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000202s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.002884s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000116s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000512s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000610s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 227 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030376s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030467s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000538s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000741s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000821s ]
+
+[ 2015-11-28T22:51:19+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003520s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000293s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.006226s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000269s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003946s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000207s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003691s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000309s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.004396s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000272s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.007263s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000237s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003671s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000474s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000555s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003532s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000195s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004296s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000349s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003103s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000198s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.005334s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000119s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000514s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000608s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 231 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.033372s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033459s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000539s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000774s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000847s ]
+
+[ 2015-11-28T22:53:04+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004599s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000328s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.005479s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000288s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004185s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000209s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004105s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000350s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.005731s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000249s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003361s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000236s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.005292s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000423s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000316s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.005437s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000317s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.005846s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000436s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.006020s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000253s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003465s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000124s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000523s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000629s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 231 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.032909s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032998s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000546s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000619s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000728s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000802s ]
+
+[ 2015-11-28T22:57:11+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004036s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000344s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.004840s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000313s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003835s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000241s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003916s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003671s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.002996s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000248s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003906s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000512s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003290s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000236s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004604s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000365s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003144s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000250s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003455s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000347s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000513s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000608s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.029608s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029696s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000724s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000803s ]
+
+[ 2015-11-28T22:57:45+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003409s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000379s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003407s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000242s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003918s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000223s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004507s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000404s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003169s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003913s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000278s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003838s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000356s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003410s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003874s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000377s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003226s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000195s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003025s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000101s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000531s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000638s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.031077s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031163s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000549s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000723s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000798s ]
+
+[ 2015-11-28T22:58:34+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004209s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000807s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003409s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000294s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003795s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000228s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003816s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000380s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003390s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000291s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003029s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003832s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000418s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000336s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.004551s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003898s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003172s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003064s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000177s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000526s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000624s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030135s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030241s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000715s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000830s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
+[ 2015-11-28T22:59:40+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003749s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000426s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003935s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000285s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003803s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000186s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004290s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003362s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000232s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003284s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004088s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000375s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000309s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.005249s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000211s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003835s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000352s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003426s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003492s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000125s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001234s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.033910s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033998s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000538s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000628s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000703s ]
+
+[ 2015-11-28T23:00:25+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004499s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000301s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.004799s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000244s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003866s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000192s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003978s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.005333s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003285s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003997s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000374s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000417s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003511s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000206s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004886s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003362s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000196s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003816s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000161s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000535s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000641s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.032483s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032588s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000797s ]
+
+[ 2015-11-28T23:01:38+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003663s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000309s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003396s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000244s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003835s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000262s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003973s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000473s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003554s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003725s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000286s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004183s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000415s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000319s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003437s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004484s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000363s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.007913s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003807s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000132s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000554s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000680s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.031915s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032020s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000581s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000724s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000799s ]
+
+[ 2015-11-28T23:02:08+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004174s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000303s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003462s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000254s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004025s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000221s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004416s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000379s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003260s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000256s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003306s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000239s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004571s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000468s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000364s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.004087s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000235s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004113s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000380s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003698s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003257s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000136s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000552s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000656s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.031112s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031205s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000538s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000614s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000859s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000950s ]
+
+[ 2015-11-28T23:03:06+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004005s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000314s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003399s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003702s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000617s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003759s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000340s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.002996s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003069s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000219s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004825s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000400s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000326s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003371s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000188s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003631s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.001061s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003172s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000179s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003285s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000140s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000531s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000629s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.029669s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029757s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000461s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000713s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000787s ]
+
+[ 2015-11-28T23:03:38+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003542s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000288s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003165s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000239s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004223s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000198s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003746s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000590s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003045s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003283s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003783s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000370s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000287s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003265s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003868s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000460s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003441s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000210s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003071s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000112s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000596s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000721s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.035410s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035507s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000519s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000770s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000851s ]
+
+[ 2015-11-28T23:06:33+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003730s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000294s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003456s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000300s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004446s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000265s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004143s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003193s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000249s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003787s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004378s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000445s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000369s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003324s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003899s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003897s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000224s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003283s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000168s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000530s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000632s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.031329s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031425s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000514s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000734s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000810s ]
+
+[ 2015-11-28T23:09:20+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003845s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003177s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003849s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000218s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.006385s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003071s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000263s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.005239s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000273s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003849s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000378s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000304s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003162s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000213s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004228s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003245s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000214s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003070s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000149s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000515s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000607s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030033s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030120s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000550s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000718s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000793s ]
+
+[ 2015-11-28T23:09:31+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003627s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000260s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003233s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000238s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003681s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000186s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003717s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000308s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.004569s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000264s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.002972s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000199s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004702s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000387s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003523s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000331s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.005127s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000431s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.004072s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003380s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000166s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000526s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000635s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.032444s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032549s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000520s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000750s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2015-11-28T23:12:59+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003990s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000297s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003595s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000266s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004629s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000220s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.005641s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003599s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003554s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000243s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004692s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000959s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000344s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003959s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003747s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000352s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003802s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000248s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.005637s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000195s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000533s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000641s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.033767s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033864s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000504s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000768s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000860s ]
+
+[ 2015-11-28T23:13:18+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003897s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000331s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.004094s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000272s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003814s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000197s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004599s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000419s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003548s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000279s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003253s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.006045s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000531s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000359s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003461s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000237s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004071s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000359s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003346s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000565s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003368s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000149s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001182s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001284s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 227 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.031399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031489s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000596s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000744s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000822s ]
+
+[ 2015-11-28T23:25:59+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003506s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000279s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003140s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000252s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003833s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000214s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.005048s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000364s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003013s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003643s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004420s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000398s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003127s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003758s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000397s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003684s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000212s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.002993s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000129s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000516s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000612s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 227 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030721s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030811s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000664s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000738s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000935s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001012s ]
+
+[ 2015-11-28T23:27:56+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.004283s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000286s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003206s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000253s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.005098s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000226s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004247s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000360s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003200s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003038s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000225s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004498s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000486s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000307s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003575s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000239s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004349s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000372s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003311s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000209s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.002961s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000110s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000511s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000608s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 231 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.031060s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031145s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000766s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000844s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001137s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001221s ]
+
+[ 2015-11-28T23:29:42+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003360s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000274s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003149s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000248s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004676s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000218s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003750s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000377s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003090s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000636s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003517s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000224s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003695s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000371s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003045s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000198s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004868s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000406s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003250s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000179s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003499s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000143s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000509s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000605s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 231 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.029730s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029819s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000553s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000624s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001489s ]
+
+[ 2015-11-28T23:36:17+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003438s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000271s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.004063s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000293s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003900s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000213s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004640s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000350s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003148s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000257s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003104s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000228s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003804s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000393s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000295s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003867s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000328s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004029s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.004092s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000229s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003184s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000160s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000520s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000627s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 231 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.031588s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031678s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000731s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000834s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000953s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001030s ]
+
+[ 2015-11-28T23:38:49+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.006958s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.001130s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.005660s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004114s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000208s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004829s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000427s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003527s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003520s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000248s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.006205s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000571s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000395s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.004475s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000237s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004303s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000400s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003729s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.006790s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000178s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000551s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001423s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 231 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.035471s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035566s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000631s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000709s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000869s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000945s ]
+
+[ 2015-11-28T23:44:48+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003835s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000288s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.004959s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000288s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.004296s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000244s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.006041s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000444s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003761s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000267s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003520s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000387s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003890s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.001100s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.004056s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000234s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003868s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000375s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.004578s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000235s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003865s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000214s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000524s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000621s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030959s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031046s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000543s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000614s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000776s ]
+
+[ 2015-11-28T23:45:23+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003749s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000300s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.004503s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000246s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003983s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000213s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004129s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000343s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.004134s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003509s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000360s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004308s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000425s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000311s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.004179s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004022s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003133s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000204s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.004633s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000159s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000515s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000611s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 188 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 208 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 237 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030631s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030737s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000791s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001113s ]
+
+[ 2015-11-28T23:55:19+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003996s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000321s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003265s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000411s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003905s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000266s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004601s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003084s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000283s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.002952s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000265s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004281s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000383s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000271s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.004262s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000209s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004278s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000382s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003149s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003553s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000123s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000532s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000648s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 189 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 209 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 241 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.031424s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031512s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000670s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000741s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000909s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000983s ]
+
+[ 2015-11-28T23:56:24+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003472s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000313s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003685s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000293s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003776s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000246s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004600s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003054s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000289s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.003142s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003763s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000394s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000433s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003545s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000264s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004394s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003208s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000254s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000180s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000524s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000625s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 189 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 209 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 241 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.029983s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030069s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000615s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000901s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000975s ]
+
+[ 2015-11-28T23:56:55+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/goods/info/id/473.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.003634s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.000287s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:0.003142s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000482s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.003799s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000222s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003759s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000351s ]
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.003129s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.000259s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.005720s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000251s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.004262s ]
+SQL: SELECT * FROM `ly_goods` INNER JOIN ly_category_goods ON ly_goods.cate_id = ly_category_goods.id  WHERE ( `goods_id` = 473 ) LIMIT 1   [ RunTime:0.000420s ]
+SQL: UPDATE `ly_goods` SET `hits`=hits+1 WHERE ( goods_id=473 ) [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `ly_topic` [ RunTime:0.003657s ]
+SQL: SELECT * FROM `ly_topic` WHERE ( `tid` = 0 ) LIMIT 1   [ RunTime:0.000200s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.003692s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( `cate_id` = 15 ) ORDER BY hits DESC,goods_id DESC LIMIT 8   [ RunTime:0.000409s ]
+SQL: SHOW COLUMNS FROM `ly_goods_extra` [ RunTime:0.003162s ]
+SQL: SELECT * FROM `ly_goods_extra` WHERE ( `goods_id` = 473 ) AND ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000199s ]
+SQL: SHOW COLUMNS FROM `ly_tag` [ RunTime:0.002936s ]
+SQL: SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC  [ RunTime:0.000109s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') and status = 1 ) ORDER BY sort ASC' at line 1
+ [ SQL语句 ] : SELECT * FROM `ly_tag` WHERE ( id in () and status = 1 ) ORDER BY sort ASC 
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000533s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000627s ]
+NOTIC: [8] Undefined variable: ishome D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 190 行.
+NOTIC: [8] Undefined variable: msg D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 210 行.
+NOTIC: [8] Undefined variable: goods_name D:\wamp\www\lvyou\Runtime\Cache\Home\f0b2be0f98bf20434c73ee9abf8d8a86.php 第 242 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030069s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030156s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000529s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000779s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000853s ]
+

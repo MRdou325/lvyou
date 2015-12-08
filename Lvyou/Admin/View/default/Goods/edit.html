@@ -1,0 +1,295 @@
+<extend name="Public/base"/>
+  
+<block name="body">
+    <!-- ace styles -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=826e806b86676d155282de3d37188137"></script>
+    <script src="http://api.map.baidu.com/library/MarkerTool/1.2/src/MarkerTool_min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/CityList/1.4/src/CityList_min.js"></script>
+
+	<!--[if lte IE 8]>
+	  <link rel="stylesheet" href="__CSS__/ace-ie.min.css" />
+	<![endif]-->
+<h2>基础信息</h2>
+<hr>
+               <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>           
+                        <form class="form-horizontal" role="form" action="{:U('Goods/edit')}" method="post" enctype="multipart/form-data">
+                          {:setParam(array('goods_id'=>$goods['goods_id']))}
+                           <div class="form-group">
+	                          <label class="col-sm-2 control-label no-padding-right" for="form-field-1">图片<span style="color:#f00;">*</span></label>
+							  <div class="col-sm-10">
+									<input type="file" id="upload_picture_pic_url">
+									<input type="hidden" name="pic_url" id="pic_url" value="{$goods[pic_url]}"/>
+									<div class="upload-img-box">
+									<notempty name="goods.pic_url">
+										<div class="upload-pre-item"><img src="{$goods[pic_url]|get_image_url}"/></div>
+									</notempty>
+									</div>
+							  </div>	
+								<script type="text/javascript">
+								//上传图片
+							    /* 初始化上传插件 */
+								$("#upload_picture_pic_url").uploadify({
+							        "height"          : 30,
+							        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+							        "fileObjName"     : "download",
+							        "buttonText"      : "上传图片",
+							        "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+							        "width"           : 120,
+							        
+							        "removeTimeout"	  : 1,
+							        "fileTypeExts"	  : "*.jpg; *.png; *.gif;",
+							        "onUploadSuccess" : uploadPicture,
+							        "onFallback" : function() {
+							            alert('未检测到兼容版本的Flash.');
+							        }
+							    });
+								function uploadPicture(file, data){
+							    	var data = $.parseJSON(data);
+							    	var src = '';
+							    	
+							        if(data.status){
+							        	
+							        	$("#pic_url").val(data.path);
+							        	src = data.url || '__ROOT__' + data.path
+							        	$("#pic_url").parent().find('.upload-img-box').html(
+							        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
+							        	);
+							        } else {
+							        	updateAlert(data.info);
+							        	setTimeout(function(){
+							                $('#top-alert').find('button').click();
+							                $(that).removeClass('disabled').prop('disabled',false);
+							            },1500);
+							        }
+							    }
+								</script>
+							</div>
+                           
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right" for="form-field-1">名称<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-5"><input class="col-sm-12 form-control" type="text" name="title" value="{$goods['title']}"></div>
+
+                                <label class="col-sm-1 control-label no-padding-right">消费水平</label>   
+                                <div class="col-sm-2"><input class="col-sm-12 form-control" type="text" name="price" value="{$goods['price']}"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">类型</label>   
+                                <div class="col-sm-2">
+                                    <select class="col-sm-12 form-control" name="goods_type" id="type">
+                                        <volist name='goodstype' id='data'>
+                                        <option value="{$data['id']}" <php>if($data['id'] == $goods["goods_type"]){</php>selected<php>}</php>>                              {$data['name']}</option>
+                                        </volist>                                    
+                                    </select>
+                                </div>
+
+                                <label class="col-sm-1 control-label no-padding-right">选择分类</label>
+                                <div class="col-sm-2">
+                                    <select class="col-sm-12 form-control" name="cate_id">
+                                        <option value="0">选择分类</option>
+                                        <volist name='category' id='data'>
+                                        <option value="{$data['id']}" <php>if($data['id'] == $goods["cate_id"]){</php>selected<php>}</php>>
+                                        	<for start="1" end="$data.level">
+                                        		<php>if($i+1 == $data['level']){</php>&nbsp;|-<php>}else{</php>&nbsp;&nbsp;&nbsp;<php>}</php>
+                                        	</for>	
+                                        		{$data['category_name']}</option>
+                                        </volist>                                        
+                                    </select>
+                                    <script type='text/javascript'>
+                                        $("select[name='sort_id'] option[value='<php>echo $goods[sort_id]</php>']").attr('selected','selected');
+                                    </script>
+                                </div>
+
+                                <label class="col-sm-1 control-label no-padding-right">审核状态<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-2">
+                                    <select class="col-sm-12 form-control" name="status">
+                                        <option selected="selected" value="1">审核通过</option>
+                                        <option value="0">待审核</option>
+                                    </select>
+                                    <script type='text/javascript'>
+                                        $("select[name='state'] option[value='<php>echo $goods[state]</php>']").attr('selected','selected');
+                                    </script>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">标签<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-9">
+                                    <volist name="tags" id="tag">
+                                        <input type="checkbox" name="tag[]" value="{$tag.id}" <php>if(in_array($tag['id'], $mytag)){</php>checked<php>}</php>>{$tag.name}&nbsp;&nbsp;&nbsp;
+                                    </volist>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">地图位置</label>
+                                <div class="col-sm-9">
+                                    <input type="button" value="开始标注" id="biaozhu" onclick="show()" style="width:100px;height:30px;">
+                                    <div id='show_map' ></div>
+                                    <div id="drag">
+                                        <div class="title">
+                                            <h2>1.选择位置>2.标注位置>3.保存位置</h2>
+                                            <div>
+                                                <a class="max" href="javascript:;" title="最大化"></a>
+                                                <a class="revert" href="javascript:;" title="还原"></a>
+                                                <a class="close" href="javascript:;" title="关闭"></a>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <div id="f_container">
+                                                <div id="container"></div>
+                                            </div>
+                                            <div id="allmap" style="width:790px;height:500px;"></div>
+                                            <div style="margin-top: 15px;text-align: right">
+                                                <input type="hidden" id="lat"><input type="hidden" id="lng">
+                                                <input type="button" onclick="showMap();" class="btn" value="保存">
+                                                <input type="button" onclick="dhide()" class="btn" value="取消">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">商品介绍 </label>
+
+                                <link rel="stylesheet" href="__ADDONS__/kindeditor/themes/default/default.css" />
+                                <link rel="stylesheet" href="__ADDONS__/kindeditor/plugins/code/prettify.css" />
+                                <script charset="utf-8" src="__ADDONS__/kindeditor/kindeditor.js"></script>
+                                <script charset="utf-8" src="__ADDONS__/kindeditor/lang/zh_CN.js"></script>
+                                <script charset="utf-8" src="__ADDONS__/kindeditor/plugins/code/prettify.js"></script>
+                                <script>
+                KindEditor.ready(function (K) {
+                    var editor1 = K.create('textarea[name="item_body"]', {
+                        cssPath: '__ADDONS__/kindeditor/plugins/code/prettify.css',
+                        uploadJson: '__ADDONS__/kindeditor/php/upload_json.php',
+                        fileManagerJson: '__ADDONS__/kindeditor/php/file_manager_json.php',
+                        allowFileManager: true,
+                        afterChange: function (){
+                            var self = this;
+                            self.sync();
+                        },
+                        afterCreate: function () {
+                            var self = this;
+                            K.ctrl(document, 13, function () {
+                                self.sync();
+                                K('form[name=example]')[0].submit();
+                            });
+                            K.ctrl(self.edit.doc, 13, function () {
+                                self.sync();
+                                K('form[name=example]')[0].submit();
+                            });
+                        }
+                    });
+                    prettyPrint();
+                });
+                                </script>
+                                <div class="col-sm-9">
+                                    <textarea class="col-sm-12" name="item_body" style="height:500px;visibility:hidden;">{:stripslashes($goods['item_body'])}</textarea>
+                                </div>
+                            </div>
+                            <h2>Seo信息</h2>
+                            <hr>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">seo标题</label>    
+                                <div class="col-sm-9"><input class="col-sm-12 form-control" type="text" name="seo_title" value="{$goods['seo_title']}"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">seo关键字</label>   
+                                <div class="col-sm-9"><input class="col-sm-12 form-control" type="text" name="seo_keywords" value="{$goods['seo_keywords']}"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">seo内容</label>    
+                                <div class="col-sm-9"><textarea  class="col-sm-12 form-control" name="seo_description" style="height:120px;">{$goods['seo_description']}</textarea></div>
+                            </div>
+
+                            <div class="clearfix form-actions">
+                                <div class="col-md-offset-4 col-md-4">
+                                    <button class="btn btn-info btn-block ajax-post" target-form="form-horizontal" type="submit">
+                                        <i class="icon-ok bigger-110"></i>
+                                        确认
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+    <script type="text/javascript">
+        var marker, oDrag = document.getElementById("drag");
+        // 百度地图API功能
+        var map = new BMap.Map("allmap"); // 创建Map实例
+        map.enableScrollWheelZoom(true);
+        map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT}));    // 右下比例尺
+        map.setDefaultCursor("Crosshair");//鼠标样式
+        map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT}));  //右上角，仅包含平移和缩放按钮
+        var cityList = new BMapLib.CityList({
+            container: 'container',
+            map: map
+        });
+        map.addEventListener("click", showInfo);
+        function myFun(result){
+            var cityName = result.name;
+            map.setCenter(cityName);
+            //alert(cityName);
+        }
+        function showInfo(e){
+            map.clearOverlays();
+            marker = new BMap.Marker(new BMap.Point(e.point.lng, e.point.lat));  // 创建标注
+            map.addOverlay(marker);
+            //获取经纬度
+            document.getElementById("lng").value = e.point.lng;
+            document.getElementById("lat").value = e.point.lat;
+        }
+
+        function show(){
+            // 初始化地图,设置城市和地图级别。
+            var myCity = new BMap.LocalCity();
+            myCity.get(myFun);
+            oDrag.style.display = "block";
+        }
+        function dhide(){
+            map.clearOverlays();
+            document.getElementById("lng").value = '';
+            document.getElementById("lat").value = '';
+            oDrag.style.display = "none";
+        }
+        
+        function showMap(){
+            oDrag.style.display = "none";
+            document.getElementById("show_map").css("widht",300);
+            var map1 = new BMap.Map("show_map");
+            var lng = document.getElementById("lng").value;
+            var lat = document.getElementById("lat").value;
+            map1.centerAndZoom(new BMap.Point(lng, lat), map.getZoom());
+            var marker1 = new BMap.Marker(new BMap.Point(lng, lat));  // 创建标注
+            map1.addOverlay(marker1);              // 将标注添加到地图中
+            alert(lng+','+lat);
+            console.log(marker1);
+        }
+        
+    </script>
+   
+ </block>
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+<script>
+    $(function () {
+        $('input[type="file"]').ace_file_input({
+            no_file: 'No File ...',
+            btn_choose: 'Choose',
+            btn_change: 'Change',
+            droppable: false,
+            onchange: null,
+            thumbnail: false //| true | large
+                    //whitelist:'gif|png|jpg|jpeg'
+                    //blacklist:'exe|php'
+                    //onchange:''
+                    //
+        });
+        highlight_subnav('{:U('Goods/edit')}');
+    });
+    
+
+</script>

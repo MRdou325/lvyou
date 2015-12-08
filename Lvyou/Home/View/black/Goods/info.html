@@ -1,0 +1,313 @@
+<extend name="Public/base"/>
+<block name="head">
+	<link href="__NEW_CSS__/goods.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=E4805d16520de693a3fe707cdc962045"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&amp;ak=E4805d16520de693a3fe707cdc962045&amp;services=&amp;t=20151113040005"></script>
+</block>
+<block name="body">
+<div class="row-fluid">
+  <div class="container">
+    <div class="goods bg-white">
+    <php>if($msg){</php><div class="msg">{$msg}</div><php>}</php>
+        <!--items start-->
+        <div class="destination-top col-md-12"> 
+            <h1 class="tit col-md-12">{:cutstr($goods['title'],100)}</h1> 
+        </div>
+        <div class="destination-carousel col-md-12">
+            <div class="e_destination_imgbox col-md-8 col-sm-12">
+                <img alt="{$goods['title']}" src="{$goods['pic_url']}" >
+            </div>
+            <div class="e_destination_txtbox col-md-3 col-sm-12">
+                <div class="b_title clrfix">
+                    <h1 class="tit">{$goods['name']}</h1>
+                    <div class="entit"></div>
+                </div>
+               <div class="countbox">
+                <div class="c_item">&nbsp;&nbsp;{$goods['summary']}</div>
+               </div>
+            </div>
+        </div>
+        <div class="destination col-md-12">
+            <div class="destination-left col-md-8 col-sm-12">
+            </div>
+            <div class="destination-right col-md-3 col-sm-12">
+                <div class="baidu_map">
+                    <div id="allmap"></div>
+                </div>
+            </div>
+        </div>
+        <div class="show_box fl col-md-12">
+            <div class="show_body mb20 clear">
+                <div class="row"><h1 class="title"><php>if($goods['tid'] > 0){</php><strong>&lt;{$goods['tname']}&gt;</strong><php>}</php>{:cutstr($goods['title'],100)}</h1></div>
+                <div class="show_img fl">
+                    <a class="show_big buy" title="{$goods_name}">
+                        <img alt="{$goods['title']}" src="{$goods['pic_url']}" >
+                    </a>
+                    <!-- JiaThis Button BEGIN -->
+                    <div class="jiathis_style">
+                        <a class="jiathis_button_qzone"></a>
+                        <a class="jiathis_button_tsina"></a>
+                        <a class="jiathis_button_tqq"></a>
+                        <a class="jiathis_button_weixin"></a>
+                        <a class="jiathis_button_renren"></a>
+                        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                        <a class="jiathis_counter_style"></a>
+                    </div>
+                    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                    <!-- JiaThis Button END -->
+                </div>
+                <div class="price-info goods-info pr  fl">
+                <php>if($goods['goods_type']==1){</php>
+                    <ul>
+                        <li>门 市 价: <del id="price">￥{$goods['price']}</del>&nbsp;&nbsp;&nbsp;<em><b id="price_cncn"><php>echo sprintf( "%.2f",$goods['discount_price']/$goods['price'])*10;</php>折</b></em></li>                                                                    
+                        <li class="price" style="width:100% !important;">优 惠 价: <em>￥<b id="price_cncn">{$goods['discount_price']}</b></em>&nbsp;元&nbsp;&nbsp;&nbsp;<php>if($goods['child_price'] > 0){</php>儿童价：<em>￥<b id="price_cncn_child">{$goods['child_price']}</b></em>&nbsp;元<php>}</php></li>
+                        <li>发团日期: 指定日期，请提前<strong>{$goods["aheaddays"]}</strong>天报名</li>
+                        <li>出发城市: {$goods['city']}</li>
+                        <li>行程天数: {$goods['days']}天</li>
+                        <li>交通方式: {$goods['traffic']}</li>
+                        <notempty name="tags">
+                        <li class="tag">产品提示：
+                            <volist name="tags" id="tag">
+                                <span><php>if($tag["pic_url"] != ''){</php><img title="{$tag["name"]}" alt="{$tag["name"]}" src="{$tag["pic_url"]|get_image_url}"><php>}else{</php>{$tag["name"]}<php>}</php></span>
+                            </volist>
+                        </li>
+                        </notempty>
+                    </ul>
+                    <php>}else{</php>
+                        <ul class="txt">
+                            <li class="price">优 惠 价: <em>￥<b>{$goods['discount_price']}</b></em>&nbsp;元</li>
+                            <li class="price mt3">门 市 价: <del>￥{$goods['price']}</del>&nbsp;&nbsp;元</li>
+                            <li><span>办理时间:</span>{$goods['days']}天</li>                        
+                            <li><span>邀 请 函:</span><php>if($goods['invite']==2){</php>不<php>}</php>需要</li>                        
+                            <li><span>有 效 期:</span>{$goods["aheaddays"]}天</li>                        
+                            <li><span>所属领区:</span>{$goods['city']}</li>                        
+                            <li><span>最多停留:</span>{$goods["maxdays"]}天</li>                        
+                            <li><span>面&nbsp;&nbsp;&nbsp;&nbsp;试:</span><php>if($goods['audition']==2){</php>不<php>}</php>需要</li>                        
+                            <li><span>受理范围:</span>{$goods['traffic']}</li>
+                        </ul>
+                    <php>}</php>
+                    <div class="button">
+                        <p class="btn">
+                            <a class="go_btn buy fl" rel="nofollow" onclick="ShowDiv(baom)">
+                                <span>马上报名&gt;&gt;</span>
+                            </a>
+                        </p>
+                        <s class="tel">或直接拨打<em>{:C('WEB_SITE_TEL')}</em>咨询/预订</s>
+                </div>
+                    <p class="btn" style="display:block">
+                    <a class="y-like my-like mt5 fl item-like-btn" href="javascript:;" onclick="favor({$goods['goods_id']})">
+                            <em class="icon icon-k"></em>收藏</a> 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="bady-part col-md-9">
+                <div class="bady-tab bady_bg clear" id="bady-tab">
+                    <ul class="fl" id="tabs">
+                        <li><a title="tab1">商品详情</a></li>
+                        <volist name="goods_extra" id="extra" key="k">
+                            <li><a title="tab{$k+1}">{$extra.name}</a></li>
+                        </volist>
+                    </ul>
+                    <div class="gobuy fr buy">
+                        <p class="price fl">
+                            <em class="yang">￥</em>
+                            <span class="jd-current">{$goods['discount_price']}</span></p>
+                            <a class="btn  fl" rel="nofollow" onclick="ShowDiv(baom)">
+                            <span>马上报名&gt;&gt;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="con">
+                    <div id="content">
+                        <div id="tab1" class="tab">
+                            {$goods['item_body']}
+                        </div>
+                        <volist name="goods_extra" id="extra" key="k">
+                            <div id="tab{$k+1}" class="tab">
+                                {$extra.content}
+                            </div>
+                        </volist>
+                    </div>
+
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        $("#content div.tab").hide(); // Initially hide all content
+                        $("#tabs li a:first").attr("class","active"); // Activate first tab
+                        $("#content div:first").fadeIn(); // Show first tab content
+                        
+                        $('#tabs a').click(function(e) {
+                            e.preventDefault();        
+                            $("#content div.tab").hide(); //Hide all content
+                            $("#tabs li a").attr("class",""); //Reset id's
+                            $(this).parent().find("a").attr("class","active"); // Activate this
+                            $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
+                        });
+                        $('#add_goods').click(function(e) {
+                            e.preventDefault();        
+                            $("#content div.tab").hide(); //Hide all content
+                            $("#tabs li a").attr("class",""); //Reset id's
+                            //$(this).parent().find("a").attr("class","active"); // Activate this
+                            $('#tab0').fadeIn(); // Show content for current tab
+                        });
+                    });
+                </script>
+            </div>
+            <div class="hot_box fr col-md-3">
+                <div class="hot_goods">
+                    <h3>
+                        <div class="line"></div>
+                        <div class="line-txt">HOT同类热卖</div>
+                    </h3>
+                    <volist name="hot_goods" id="v">
+                        <div>
+                            <a target="_blank" href="{:U('goods/info',array('id'=>$v['goods_id']))}">
+                                <img src="{$v.pic_url}" alt="{$v.title}">
+                                <div class="hot_price">
+                                    <em class="hot_yang">￥</em>
+                                    <em class="hot_num">{$v.discount_price}</em>
+                                </div>
+                            </a>
+                        </div>
+                    </volist>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-- /主体 -->
+    <script type="text/javascript" src="__JS__/jquery.sticky.js"></script>
+    <script type="text/javascript"> // sticky nav bar 
+      $(function(){
+        $("div#bady-tab").sticky({topSpacing:0});
+      });
+    </script>
+
+</div>
+<div id="baom" style="display:none">
+<div id="baom_bg" onclick="CloseDiv()"></div>
+<script language="javascript" type="text/javascript" src="__JS__/WdatePicker.js"></script>
+    <div id="bao_content">
+    <div class="close" id="close" onclick="CloseDiv()" title="关闭">X</div>
+    <form action="{:U('Goods/info',array('id'=>$goods['goods_id'],'add'=>'do'))}" method="post">
+    <ul>
+        <li>
+            <h2>&nbsp;===&nbsp;旅游在线预定&nbsp;===</h2>
+        </li>
+        <li>
+            <label class="normal">旅游线路：</label>
+            <input class="normal-input title" readonly="" value="{$goods.title}"  autocomplete="off" type="text">
+        </li>
+        <li>
+            <label class="normal">出游时间：</label>
+            <input value="" class="normal-input" id="time" placeholder="请选择出行时间" name="time" autocomplete="off" type="text" onClick="WdatePicker({minDate:'%y-%M-%d'})">
+        </li>
+        <li>
+            <label class="normal">成人数：</label>
+            <input value="1" class="normal-input" id="num" placeholder="/人" name="num" autocomplete="off" type="text">
+            &nbsp;&nbsp;&nbsp;&nbsp;成人价：<font color="#f53">{$goods.discount_price}元/人</font>
+        </li>
+        <li>
+            <label class="normal">小孩数：</label>
+            <input value="0" class="normal-input" id="child" placeholder="/人" name="child" autocomplete="off" type="text">
+            &nbsp;&nbsp;&nbsp;&nbsp;小孩价： <font color="#f53">{$goods.child_price}元/人</font><br>&nbsp;&nbsp;&nbsp;&nbsp;（12周岁以下为小孩）
+        </li>
+        <li>
+            <label class="normal">您的姓名：</label>
+            <input value="" class="normal-input" id="name" placeholder="请输入您的姓名" name="name" autocomplete="off" type="text">
+            &nbsp;&nbsp;&nbsp;&nbsp;* 正确的联系人能帮助我们更快的联系到您
+        </li>
+        <li>
+            <label class="normal">您的电话：</label>
+            <input value="" class="normal-input" id="tel" placeholder="请输入您的手机号" name="tel" autocomplete="off" type="text">
+            &nbsp;&nbsp;&nbsp;&nbsp;* 推存填写手机号码，方便我们联系到您
+        </li>
+        <li>
+            <label class="normal">您的邮件：</label>
+            <input value="" class="normal-input" id="email" placeholder="请输入您的邮箱" name="email" autocomplete="off" type="text">
+            &nbsp;&nbsp;&nbsp;&nbsp;* 请填写你常用的邮箱，及时收取旅游优惠信息！
+        </li>
+        <li>
+            <label class="normal">您的地址：</label>
+            <input value="" class="normal-input" id="address" placeholder="请输入您的地址" name="address" autocomplete="off" type="text">
+            &nbsp;&nbsp;&nbsp;&nbsp;* 非常重要，方便我们上门接送！
+        </li>
+        <li>
+            <label class="normal">备注信息：</label>
+            <textarea name="desc">请填写您的留言</textarea>
+        </li>
+        <li>
+            <label class="normal"></label>
+            <div class="btn">
+                <input class="sub smt-o" value="提交" autocomplete="off" type="submit">
+            </div>
+        </li>
+    </ul>
+    </form>
+    </div>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+    map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>
+    <script type="text/javascript">
+//弹出隐藏层
+function ShowDiv(show_div){
+    $("#baom").css("display","block");//.css("width","100%").css("height","100%");
+};
+//关闭弹出层
+function CloseDiv()
+{
+     $("#baom").css("display","none");
+};
+$().ready(function(){
+    $("#time").blur(function(){if($(this).val() == "") $(this).focus()});
+    $("#num").blur(function(){if($(this).val() == "") $(this).focus()});
+    $("#child").blur(function(){if($(this).val() == "") $(this).focus()});
+    $("#name").blur(function(){if($(this).val() == "") $(this).focus()});
+    $("#tel").blur(function(){if($(this).val() == "") $(this).focus()});
+    $("#email").blur(function(){if($(this).val() == "") $(this).focus()});
+    $("#address").blur(function(){if($(this).val() == "") $(this).focus()});
+
+    $(".sub").click(function(){
+        if($("#time").val() == ""){
+            $("#time").focus();
+            return false;
+        }
+        if($("#num").val() == ""){
+            $("#num").focus();
+            return false;
+        }
+        if($("#child").val() == ""){ 
+            $("#child").focus();
+            return false;
+        }
+        if($("#name").val() == ""){
+            $("#name").focus();
+            return false;
+        }
+        if($("#tel").val() == ""){
+            $("#tel").focus();
+            return false;
+        }
+        if($("#email").val() == ""){
+            $("#email").focus();
+            return false;
+        }
+        if($("#address").val() == ""){
+            $("#address").focus();
+            return false;
+        }
+    });
+});
+</script>
+</div>
+</div>
+</block>
+

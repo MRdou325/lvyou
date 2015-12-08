@@ -1,0 +1,113 @@
+[ 2015-11-27T23:20:18+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Admin/Goods/index.html
+SQL: SHOW COLUMNS FROM `ly_menu` [ RunTime:1.174247s ]
+SQL: SELECT * FROM `ly_menu` WHERE ( `pid` = 0 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.281262s ]
+SQL: SELECT `id` FROM `ly_menu` WHERE ( url like '%Goods/index%' ) LIMIT 1   [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `ly_menu` [ RunTime:0.101855s ]
+SQL: SELECT `id`,`pid`,`title` FROM `ly_menu` WHERE ( id=131 ) LIMIT 1   [ RunTime:0.000266s ]
+SQL: SELECT DISTINCT  `group` FROM `ly_menu` WHERE ( pid = 131 )  [ RunTime:0.000379s ]
+SQL: SELECT `id`,`url` FROM `ly_menu` WHERE ( `pid` = 131 ) AND ( `hide` = 0 )  [ RunTime:0.000326s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '周边' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000405s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '采集' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000377s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '分类' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000369s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '专题' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000377s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '标签' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000383s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '攻略' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000335s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '资讯' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000460s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `ly_menu` WHERE ( `group` = '美食' ) AND ( `pid` = 131 ) AND ( `hide` = 0 ) ORDER BY sort asc  [ RunTime:0.000392s ]
+NOTIC: [8] Undefined variable: where D:\wamp\www\lvyou\Lvyou\Admin\Controller\GoodsController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.408388s ]
+NOTIC: [8] Undefined index: where D:\wamp\www\lvyou\Lvyou\Admin\Controller\AdminController.class.php 第 437 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ly_goods` LIMIT 1   [ RunTime:0.000227s ]
+SQL: SELECT `goods_id`,`goods_type`,`num_iid`,`title`,`cate_id`,`tid`,`add_id`,`add_uname`,`city`,`days`,`aheaddays`,`traffic`,`invite`,`audition`,`maxdays`,`discount_price`,`price`,`child_price`,`pic_url`,`item_body`,`status`,`seo_title`,`seo_keywords`,`seo_description`,`ctime`,`hits`,`favor`,`sort`,`tags` FROM `ly_goods` ORDER BY sort desc , goods_id desc LIMIT 0,10   [ RunTime:0.086214s ]
+SQL: SHOW COLUMNS FROM `ly_category_goods` [ RunTime:0.448110s ]
+NOTIC: [8] Undefined variable: where D:\wamp\www\lvyou\Lvyou\Admin\Model\CategoryGoodsModel.class.php 第 13 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE (  status='1' ) ORDER BY p_id,sort  [ RunTime:0.000509s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000253s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000369s ]
+NOTIC: [8] Undefined variable: meta_title D:\wamp\www\lvyou\Runtime\Cache\Admin\353933ef32884c0fc1221009ac460075.php 第 5 行.
+SQL: SHOW COLUMNS FROM `ly_goods_type` [ RunTime:0.417920s ]
+SQL: SELECT * FROM `ly_goods_type` WHERE ( `id` = 2 ) LIMIT 1   [ RunTime:0.000303s ]
+SQL: SELECT * FROM `ly_goods_type` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000372s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:1.268546s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.268666s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.127251s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.127349s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.147299s ]
+INFO: [ app_end ] --END-- [ RunTime:0.147435s ]
+
+[ 2015-11-27T23:20:28+08:00 ] 127.0.0.1 /lvyou/index.php?s=/Home/Index/index.html
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_nav` [ RunTime:0.521542s ]
+SQL: SELECT * FROM `ly_nav` ORDER BY sort ASC LIMIT 9   [ RunTime:0.044733s ]
+SQL: SHOW COLUMNS FROM `ly_friendlink` [ RunTime:2.037962s ]
+SQL: SELECT * FROM `ly_friendlink` WHERE ( `state` = 1 ) ORDER BY sort ASC LIMIT 9   [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.251129s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8   [ RunTime:0.000215s ]
+ERR: 1054:Unknown column 'cate_id' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `ly_category` WHERE ( `status` = 1 ) AND ( `type` = 2 ) ORDER BY `sort` DESC,cate_id DESC LIMIT 8  
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 133 行.
+NOTIC: [8] Undefined variable: article D:\wamp\www\lvyou\Lvyou\Home\Controller\HomeController.class.php 第 138 行.
+SQL: SHOW COLUMNS FROM `ly_search_keyword` [ RunTime:0.164741s ]
+SQL: SELECT * FROM `ly_search_keyword` WHERE ( `isshow` = 1 ) ORDER BY times desc  [ RunTime:0.001211s ]
+SQL: SHOW COLUMNS FROM `ly_support` [ RunTime:0.304629s ]
+SQL: SELECT * FROM `ly_support` WHERE ( `status` = 1 ) ORDER BY sort desc  [ RunTime:0.000326s ]
+SQL: SHOW COLUMNS FROM `ly_banner` [ RunTime:0.220207s ]
+SQL: SELECT * FROM `ly_banner` WHERE ( `status` = 1 ) ORDER BY `sort` ASC  [ RunTime:0.000373s ]
+SQL: SHOW COLUMNS FROM `ly_ad` [ RunTime:0.002945s ]
+ERR: 1146:Table 'lvyou.ly_ad' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `ly_ad`
+SQL: SELECT * FROM `ly_ad` WHERE ( `state` = 1 ) ORDER BY `order` DESC  [ RunTime:0.000278s ]
+ERR: 1146:Table 'lvyou.ly_ad' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `ly_ad` WHERE ( `state` = 1 ) ORDER BY `order` DESC 
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Controller\IndexController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `ly_category_goods` [ RunTime:0.003433s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 0 ) AND ( is_home = 1 or is_home_banner = 1 ) ORDER BY sort ASC  [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `ly_goods` [ RunTime:0.005126s ]
+SQL: SELECT `id`,`category_name`,`is_home` FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 1 )  [ RunTime:0.000350s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( status = 1 and cate_id in (1,15,16,17) ) ORDER BY `sort` DESC,goods_id DESC LIMIT 8   [ RunTime:0.000399s ]
+SQL: SELECT `id`,`category_name`,`is_home` FROM `ly_category_goods` WHERE ( `status` = 1 ) AND ( `p_id` = 2 )  [ RunTime:0.000264s ]
+SQL: SELECT * FROM `ly_goods` WHERE ( status = 1 and cate_id in (2,18,19,20) ) ORDER BY `sort` DESC,goods_id DESC LIMIT 8   [ RunTime:0.000276s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\GoodsModel.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `ly_category` [ RunTime:0.032340s ]
+SQL: SELECT * FROM `ly_category` WHERE ( `status` = 1 ) ORDER BY sort  [ RunTime:0.000399s ]
+SQL: SHOW COLUMNS FROM `ly_document` [ RunTime:0.420408s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 1 ) LIMIT 10   [ RunTime:0.026397s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 2 ) LIMIT 10   [ RunTime:0.000295s ]
+SQL: SELECT * FROM `ly_document` WHERE ( `status` = 1 ) AND ( `category_id` = 39 ) LIMIT 10   [ RunTime:0.000304s ]
+SQL: SHOW COLUMNS FROM `ly_page` [ RunTime:0.531082s ]
+SQL: SELECT * FROM `ly_page` WHERE ( `status` = 1 ) AND ( `ishome` = 1 ) ORDER BY sort  [ RunTime:0.027324s ]
+SQL: SHOW COLUMNS FROM `ly_category_goods` [ RunTime:0.354005s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 0 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000366s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 1 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000244s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 15 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000280s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 16 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000253s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 17 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000235s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 2 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000254s ]
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 18 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000231s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 19 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000282s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SELECT * FROM `ly_category_goods` WHERE ( `p_id` = 20 ) AND ( `status` = 1 ) ORDER BY sort ASC  [ RunTime:0.000222s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\wamp\www\lvyou\Lvyou\Home\Model\CategoryGoodsModel.class.php 第 51 行.
+SQL: SHOW COLUMNS FROM `ly_orders` [ RunTime:0.260662s ]
+SQL: SELECT * FROM `ly_orders` ORDER BY createtime DESC LIMIT 12   [ RunTime:0.000240s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000575s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000673s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.919238s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.919357s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000805s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000945s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001063s ]
+

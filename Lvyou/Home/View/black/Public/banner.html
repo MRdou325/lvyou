@@ -1,0 +1,56 @@
+<div id="banner"  class="row-fluid">
+<div class="container">
+  <php>if($is_home_banner == 1){</php>
+	<div class="col-xs-12 col-md-3 banner-navbar">
+    <ul class="all-cate-box">
+      <volist name='category_List' id='cl'>
+      <php>if($cl['is_home_banner'] ==1){</php>
+        <li>
+          <a href="{:U('goods/cate',array('id'=>$cl['id']))}">{$cl.category_name}</a>
+          <i class="glyphicon glyphicon-chevron-right"></i>
+          <notempty name="cl['category_child']">            
+            <php>if($cl['is_home_banner_type']==2){</php>
+              <div class="sub-nav-0 visible-md visible-lg banner_sub_nav">
+              <include file="Public:banner_sub_nav" />
+            <php>}else if($cl['is_home_banner_type']==1){</php>
+              <div class="sub-nav-0 visible-md visible-lg banner_sub_nav_img">
+              <include file="Public:banner_sub_nav_img" />
+            <php>}else{</php>
+              <div class="sub-nav-0 visible-md visible-lg banner_sub_nav_txt">
+              <include file="Public:banner_sub_nav_txt" />
+            <php>}</php>
+            </div>
+          </notempty>
+        </li>
+      <php>}</php>
+      </volist>
+    </ul>
+	</div>
+<php>}</php>
+<php>if(count($banner) ==1){</php>
+	<volist name="banner" id="data">
+		<div class="col-xs-12 col-md-9 banner-slide"><img title="{$data.title}" alt="{$data.title}" src="{$data.image}" width="100%" /></div>
+	</volist>
+<php>}else{</php>
+	<div id="myCarousel" class="carousel slide col-xs-12 col-md-9 banner-slide">
+		<!-- 轮播（Carousel）指标 -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>   
+		<!-- 轮播（Carousel）项目 -->
+		<div class="carousel-inner">
+			<volist name="banner" id="data" key="k">
+				<div class="item<php>if($k == 1){</php> active<php>}</php>">
+					<img src="{$data.image}" alt="{$data.title}" title="{$data.title}" />
+				</div>
+			</volist>
+		</div>
+		<!-- 轮播（Carousel）导航 -->
+		<a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
+		<a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
+	</div> 
+<php>}</php>
+</div>
+</div>

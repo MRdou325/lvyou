@@ -1,0 +1,105 @@
+<!-- 页脚 -->
+<div style="display: none;" class="side_right fix">
+    <div class="con">
+        <a class="trigger go-top" href="javascript:;">
+            <p>回到<br>顶部</p>
+            <span><i class="glyphicon glyphicon-triangle-top" aria-hidden="true" style="font-size:24px;"></i></span>
+        </a>
+    </div>
+</div>
+<php>if(C('WEB_SUPPORT_OPEN') == 1){</php>
+<div id="tool" class="">
+	<div id="tool_content" style="display: block;">
+		<div class="tc tool_c_top"></div>
+		<div class="tc tool_c_content">
+			<h3 class="ck online">&nbsp;</h3>
+			<h3 class="ck support">咨询客服</h3>
+			<volist name="support" id="qq">
+			<h3 class="ck qq"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$qq.number}&site=qq&menu=yes">{$qq.name}</a></h3>
+			</volist>
+		</div>
+		<div class="tc tool_c_tb"></div>
+		<div class="tc tool_c_content">
+			<h3 class="ck tel">&nbsp;</h3>
+			<span class="ck phone">{:C("WEB_SITE_TEL")}</span>
+		</div>
+		<div class="tc tool_c_bottom"></div>
+	</div>
+	<a id="aFloatTools_Show" class="ck" href="javascript:void(0);" onclick="javascript:$('#tool_content').hide(1000);	$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');return false;" style="display:block">&nbsp;</a>
+	<a id="aFloatTools_Hide" class="ck" style="display:none" href="javascript:void(0);" onclick="javascript:$('#tool_content').show(1000);	$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');return false;">&nbsp;</a>
+</div>
+<php>}</php>
+
+<div class="row-fluid visible-lg visible-md" id="footer">
+    <div class="container">
+		<div class="footer clearfix wrap" style="margin:0 auto;">    
+			<p class="footer-link">  
+				<notempty name="nav">
+			        <volist name="nav" id="footnav" key="k">
+			        <php>if($footnav['pid'] == 0 && $footnav['foot'] == 1){</php>
+			        	<php>if($k!=1){</php> | <php>}</php>
+			            <a href="{$footnav.url|get_nav_url}" rel="nofollow">{$footnav.title}</a>
+			        <php>}</php>
+			        </volist>
+			    </notempty>        
+			</p>    
+			<p class="copyright">
+				Copyright © {:date("Y")} <a class="" href="/" title="{:C('WEB_SITE_NAME')}">{:C('WEB_SITE_NAME')}</a>版权所有　<a href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow">{:C('WEB_SITE_ICP')}</a>
+				{:C('TONGJI')}
+			</p>   
+			<div class="safety">      
+				<a class="safety1" target="_blank" rel="nofollow" title="上海市旅游行业协会在线分会" href="http://www.shtour.org/tourlist_onlineid4.html"></a>      
+				<a class="safety2" target="_blank" rel="nofollow" title="经营性网站备案信息" href="http://www.miibeian.gov.cn/"></a>      
+				<a class="safety3" target="_blank" rel="nofollow" title="网络110报警服务" href="http://www.cyberpolice.cn"></a>      
+				<a class="safety4" target="_blank" rel="nofollow" title="支付宝特约商家" href="https://www.alipay.com/aip/aip_validate_list.htm?trust_id=AIP0102495"></a>      
+				<a class="safety5" target="_blank" rel="nofollow" title="AAA级信用企业" href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1664396140"></a>      
+				<a class="safety6" target="_blank" rel="nofollow" title="上海工商" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20110930103539539"></a>      
+				<a class="safety7" target="_blank" rel="nofollow" title="可信网站" href="https://ss.cnnic.cn/verifyseal.dll?sn=2010101800100002662&amp;ct=df&amp;pa=590007"></a>   
+				<a class="safety8" target="_blank" rel="nofollow" title="诚信认证示范企业" href="https://search.szfw.org/cert/l/CX20120921001712001762" id="___szfw_logo___" hidefocus="false"></a>      
+				<a class="safety9" target="_blank" rel="nofollow" title="网络社会征信网" href="http://www.zx110.org"></a>      
+				<a class="safety10" target="_blank" rel="nofollow" title="360网站安全检测" href="http://webscan.360.cn"></a>      
+				<a class="safety11" target="_blank" rel="nofollow" title="网监安全" href="http://www.zx110.org/picp/?sn=310100102508"></a>   
+			</div>
+		</div>
+		<div class="hh_cooperate">
+			<!-- 友情链接 -->
+			<p>
+				<notempty name="flink">
+				<b>友情链接：</b>
+				
+				<volist name="flink" id="friend">
+					<a title="{$friend.title}" href="{$friend.url}" <php>if($friend['blank'] == 1){</php>target="_blank"<php>}</php>>{$friend.title}</a>
+
+				</volist>
+				</notempty>
+			</p>
+			<!-- // 友情链接 -->	
+			<p>
+				<b>热门精选：</b>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/taiguo3542">泰国旅游</a>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/riben3543">日本旅游</a>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/hanguo3544">韩国旅游</a>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/tuerqi3574">土耳其旅游</a>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/ouzhou3644">欧洲旅游</a>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/dibai3581">迪拜旅游</a>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/aodaliya3596">澳大利亚旅游</a>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/sililanka3656">斯里兰卡旅游</a>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/saibandao3547">塞班岛旅游</a>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/maerdaifu3546">马尔代夫旅游</a>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/balidao3545">巴厘岛旅游</a>
+				<a target="_blank" href="http://dujia.lvmama.com/tour/maoliqiusi3629">毛里求斯旅游</a>
+			</p>
+		</div>
+    </div>
+</div>
+<div class="row-fluid hidden-lg hidden-md">
+	<div class="pagebottom">
+		<div class="buttons">
+			<a href="//login.m.taobao.com/login.htm?tpl_redirect_url=https%3A%2F%2Fm.taobao.com%2F%23index">登录</a>
+			<a href="//reg.taobao.com/member/new_register.jhtml?_devenv=MobileDeviceBrowser&amp;tg=https%3A%2F%2Fm.taobao.com%2F%23index">注册</a>
+			<a href="//www.taobao.com/index.php?from=wap">电脑版</a>
+			<a href="//h5.m.taobao.com/other/feedback.html?alphatext=new_h5_index">用户反馈</a>
+		</div>
+		<div class="copyright">&copy;&nbsp;Copyright {:date("Y")} {:C('WEB_SITE_ICP')} <a>服务中心</a></div>
+	</div>
+</div>

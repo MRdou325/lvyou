@@ -1,0 +1,75 @@
+<script type="text/javascript">
+//全局变量
+var GV = {
+    DIMAUB: "__THEMES__",
+    JS_ROOT: "statics/js/",
+    TOKEN: ""
+};
+</script>
+<!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  
+	<script>
+       
+  
+    	   
+       
+   
+	$(function(){
+		$('#navbar').find('a[href="'+'{$nav_url}'+'"]').closest('li').addClass('active');  
+		// $('.goods-list').find('li').each(function(){
+			
+		// 	$(this).height($(this).width()*1.35-1);	
+		// });
+		
+					});
+					
+</script>
+<script>
+function favor(goodsid){
+    $.get("{:U('ajax/favor')}",{id:goodsid},function(json){
+    	// if(json.info == "ERROR_MEMBER_NO_LOGIN")
+    	// {
+    	// 	json.info = "请先登录"；
+    	// }
+    	showmsg(json.info);
+    })    
+}   
+function login(){
+	var name = $("#username").val();
+	var password = $("#password").val()
+	if(name == "")
+	{
+		showmsg("请输入用户名");
+	}
+	if(password == "")
+	{
+		showmsg("请输入密码");
+	}
+    $.post("{:U('ajax/login')}",{username:name,password:password},function(json){
+    	console.log(json);
+        showmsg(json.info);
+        if(json.state == 1)
+        {
+        	location.href = "{:U('Home/Index/index')}";
+        }
+    })    
+}   
+function showmsg(msg){
+	$("#tip").remove();
+	$tip = $('<div id="tip" style="font-weight:bold;position:fixed;top:240px;left: 50%;z-index:9999;background:rgb(130,194,75);padding:18px 30px;border-radius:8px;color:#fff;font-size:16px;">'+msg+'</div>');
+    $('body').append($tip);
+	$tip.stop(true).css('margin-left', -$tip.outerWidth() / 2).fadeIn(500).delay(2000).fadeOut(500);
+}
+</script>
+<!--Tab淡入浅出-->
+<script>
+   $(function () {
+      $('#myTab li:eq(1) a').tab('show');
+   });
+</script>
+<!--提示标签-->
+<script>
+   $(function () { $("[data-toggle='tooltip']").tooltip(); });
+</script>
