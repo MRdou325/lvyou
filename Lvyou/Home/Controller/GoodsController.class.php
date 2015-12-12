@@ -35,7 +35,6 @@ class GoodsController extends HomeController{
             $this->assign("iscate",2);
             $this->assign('page',$show);
         }
-        
         $this->assign('goods',$goods);
         $this->assign('cate',$cate);
         $this->assign("CategoryList",$CategoryModel->getCategoryList(0,1));

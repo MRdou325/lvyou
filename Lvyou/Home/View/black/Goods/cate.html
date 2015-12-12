@@ -1,8 +1,6 @@
 <extend name="Public/base"/>
 <block name="head">
 	<link href="__NEW_CSS__/goods.css" rel="stylesheet" />
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=E4805d16520de693a3fe707cdc962045"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&amp;ak=E4805d16520de693a3fe707cdc962045&amp;services=&amp;t=20151113040005"></script>
 </block>
 <block name="body">
 <div class="row-fluid">
@@ -23,12 +21,35 @@
                     <div class="entit"></div>
                 </div>
                <div class="countbox">
-                <div class="c_item">&nbsp;&nbsp;{$goods['summary']}</div>
+                <div class="c_item">&nbsp;&nbsp;{$cate['summary']}</div>
                </div>
             </div>
         </div>
         <div class="destination col-md-12">
             <div class="destination-left col-md-8 col-sm-12">
+                <!-- 攻略列表区 --> 
+                <div class="gl_left_content">
+                    <div class="img col-md-4">
+                        <a href="/index.php/Home/Travel/travel/id/250.shtml"><img src="http://www.etimehouse.com/Uploads/coverimg/20150722/55af084303da3.jpg"></a>
+                    </div>
+                    <div class="gl_left_right col-md-8">
+                        <div class="title_dt">
+                            <h3 class="col-md-8"><a href="/index.php/Home/Travel/travel/id/250.shtml">凤凰茶乡，一个你来了就不想走的地方！！！</a></h3>
+                        </div>
+                        <ul class="notes_info_tip">
+                            <li class="gl_left_content4 col-md-1"><a href="#"><img src="http://www.etimehouse.com/Uploads/usersimg/20150601/556bc7593df50.jpg" class="gl_left_content4_img"></a></li>
+                            <li class="gl_left_content5 col-md-2">不解释</li>
+                            <li class="gl_left_content9 col-md-8">目的地：万州凤凰茶乡</li>
+                        </ul>
+                        <ul class="notes_info_time">
+                            <li class="display">121</li>
+                            <li class="time">共1天</li>
+                        </ul>
+                        <div class="notes_content"><b>说说这次旅行：</b> 早就听闻凤凰茶乡拥有独特的自然风光、深厚的古建筑文化、浓郁的农耕文化和乡村气息。“千层梯田”，这么大规模的梯田，现在已不多见了，特别是能在这里感受到正在消失的农耕文化，实属难得。 
+                        </div>
+                    </div>
+                </div>
+                <!-- 攻略列表区 END --> 
             </div>
             <div class="destination-right col-md-3 col-sm-12">
                 <div class="baidu_map">
@@ -36,277 +57,364 @@
                 </div>
             </div>
         </div>
-        <div class="show_box fl col-md-12">
-            <div class="show_body mb20 clear">
-                <div class="row"><h1 class="title"><php>if($goods['tid'] > 0){</php><strong>&lt;{$goods['tname']}&gt;</strong><php>}</php>{:cutstr($goods['title'],100)}</h1></div>
-                <div class="show_img fl">
-                    <a class="show_big buy" title="{$goods_name}">
-                        <img alt="{$goods['title']}" src="{$goods['pic_url']}" >
-                    </a>
-                    <!-- JiaThis Button BEGIN -->
-                    <div class="jiathis_style">
-                        <a class="jiathis_button_qzone"></a>
-                        <a class="jiathis_button_tsina"></a>
-                        <a class="jiathis_button_tqq"></a>
-                        <a class="jiathis_button_weixin"></a>
-                        <a class="jiathis_button_renren"></a>
-                        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-                        <a class="jiathis_counter_style"></a>
-                    </div>
-                    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-                    <!-- JiaThis Button END -->
-                </div>
-                <div class="price-info goods-info pr  fl">
-                <php>if($goods['goods_type']==1){</php>
-                    <ul>
-                        <li>门 市 价: <del id="price">￥{$goods['price']}</del>&nbsp;&nbsp;&nbsp;<em><b id="price_cncn"><php>echo sprintf( "%.2f",$goods['discount_price']/$goods['price'])*10;</php>折</b></em></li>                                                                    
-                        <li class="price" style="width:100% !important;">优 惠 价: <em>￥<b id="price_cncn">{$goods['discount_price']}</b></em>&nbsp;元&nbsp;&nbsp;&nbsp;<php>if($goods['child_price'] > 0){</php>儿童价：<em>￥<b id="price_cncn_child">{$goods['child_price']}</b></em>&nbsp;元<php>}</php></li>
-                        <li>发团日期: 指定日期，请提前<strong>{$goods["aheaddays"]}</strong>天报名</li>
-                        <li>出发城市: {$goods['city']}</li>
-                        <li>行程天数: {$goods['days']}天</li>
-                        <li>交通方式: {$goods['traffic']}</li>
-                        <notempty name="tags">
-                        <li class="tag">产品提示：
-                            <volist name="tags" id="tag">
-                                <span><php>if($tag["pic_url"] != ''){</php><img title="{$tag["name"]}" alt="{$tag["name"]}" src="{$tag["pic_url"]|get_image_url}"><php>}else{</php>{$tag["name"]}<php>}</php></span>
-                            </volist>
-                        </li>
-                        </notempty>
-                    </ul>
-                    <php>}else{</php>
-                        <ul class="txt">
-                            <li class="price">优 惠 价: <em>￥<b>{$goods['discount_price']}</b></em>&nbsp;元</li>
-                            <li class="price mt3">门 市 价: <del>￥{$goods['price']}</del>&nbsp;&nbsp;元</li>
-                            <li><span>办理时间:</span>{$goods['days']}天</li>                        
-                            <li><span>邀 请 函:</span><php>if($goods['invite']==2){</php>不<php>}</php>需要</li>                        
-                            <li><span>有 效 期:</span>{$goods["aheaddays"]}天</li>                        
-                            <li><span>所属领区:</span>{$goods['city']}</li>                        
-                            <li><span>最多停留:</span>{$goods["maxdays"]}天</li>                        
-                            <li><span>面&nbsp;&nbsp;&nbsp;&nbsp;试:</span><php>if($goods['audition']==2){</php>不<php>}</php>需要</li>                        
-                            <li><span>受理范围:</span>{$goods['traffic']}</li>
-                        </ul>
-                    <php>}</php>
-                    <div class="button">
-                        <p class="btn">
-                            <a class="go_btn buy fl" rel="nofollow" onclick="ShowDiv(baom)">
-                                <span>马上报名&gt;&gt;</span>
-                            </a>
-                        </p>
-                        <s class="tel">或直接拨打<em>{:C('WEB_SITE_TEL')}</em>咨询/预订</s>
-                </div>
-                    <p class="btn" style="display:block">
-                    <a class="y-like my-like mt5 fl item-like-btn" href="javascript:;" onclick="favor({$goods['goods_id']})">
-                            <em class="icon icon-k"></em>收藏</a> 
-                    </p>
-                </div>
-            </div>
+        <div class="destination">   
+    <div class="destination-left"> 
+     <div class="qn_main_ct_l"> 
+      <div class="b_hotline" id="js_hotline">
+       <div class="hd">
+        <div class="tagbox clrfix">
+         <a id="two1" data-beacon="hotline_tab" class="tag current">热门路线</a>
         </div>
-        <div>
-            <div class="bady-part col-md-9">
-                <div class="bady-tab bady_bg clear" id="bady-tab">
-                    <ul class="fl" id="tabs">
-                        <li><a title="tab1">商品详情</a></li>
-                        <volist name="goods_extra" id="extra" key="k">
-                            <li><a title="tab{$k+1}">{$extra.name}</a></li>
-                        </volist>
-                    </ul>
-                    <div class="gobuy fr buy">
-                        <p class="price fl">
-                            <em class="yang">￥</em>
-                            <span class="jd-current">{$goods['discount_price']}</span></p>
-                            <a class="btn  fl" rel="nofollow" onclick="ShowDiv(baom)">
-                            <span>马上报名&gt;&gt;</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="con">
-                    <div id="content">
-                        <div id="tab1" class="tab">
-                            {$goods['item_body']}
-                        </div>
-                        <volist name="goods_extra" id="extra" key="k">
-                            <div id="tab{$k+1}" class="tab">
-                                {$extra.content}
-                            </div>
-                        </volist>
-                    </div>
-
-                </div>
-                <script>
-                    $(document).ready(function() {
-                        $("#content div.tab").hide(); // Initially hide all content
-                        $("#tabs li a:first").attr("class","active"); // Activate first tab
-                        $("#content div:first").fadeIn(); // Show first tab content
-                        
-                        $('#tabs a').click(function(e) {
-                            e.preventDefault();        
-                            $("#content div.tab").hide(); //Hide all content
-                            $("#tabs li a").attr("class",""); //Reset id's
-                            $(this).parent().find("a").attr("class","active"); // Activate this
-                            $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
-                        });
-                        $('#add_goods').click(function(e) {
-                            e.preventDefault();        
-                            $("#content div.tab").hide(); //Hide all content
-                            $("#tabs li a").attr("class",""); //Reset id's
-                            //$(this).parent().find("a").attr("class","active"); // Activate this
-                            $('#tab0').fadeIn(); // Show content for current tab
-                        });
-                    });
-                </script>
+        <h2 class="tit fl">推荐线路</h2>
+       </div>
+       <!--热门路线开始 -->
+       <div class="ct current" id="con_two_1">
+        <ul class="list_item list_2row clrfix">
+         <li class="item current margin_r">
+          <div class="imgbox">
+           <a data-beacon="hotline" class="link" href="/index.php/Home/Travel/smd_path.shtml">
+           <img width="175" height="175" class="img" src="/Public/Index/images/smd/d/d_two.jpg">
+            <div class="tit">
+             苏马荡旅游东线
+            </div></a>
+           <div class="titbg"></div>
+          </div>
+          <div class="desbox">
+           <div class="item_des" title="东线描述">
+             腾龙洞是一个集山、水、洞、林于一体，以雄、险、奇、幽、秀而驰名中外；玉龙洞则是因洞内化学沉积物洁白如玉和洞中一景酷似飞龙；刚从地下涌出的水流十分湍急，江波滚滚如雪浪腾飞，人们把清江的这一段河道称为雪照河；从利川观彩峡独家村到清江伏流出口黑洞一带，过去曾是清江故道，总长8公里；朝东岩一带风光旖旎，气势磅礴，岩石瑰丽，动人心魄，好似风情万种的土家妹向你频送亮眸，又似帅气逼人的苗家汉子对你展开猛烈追求；恩施大峡谷被专家誉为与美国科罗拉多大峡谷难分伯仲；大茅坡云海的景色神奇壮观，如梦如幻，犹如置身仙境，令人心潮澎湃，浮想联翩；传说，该山主峰隔天宫极近，常有神仙摘星辰当灯，来往于星斗山与天宫之间，故名星斗山；毛坝镇是名冠全球的“坝漆”之乡，也是湖北省“十大茶叶名乡名镇”之一。
+           </div>
+           <div class="item_des">
+            适合人群：所有人群
+           </div>
+           <div class="item_route">
+            <div class="r_l">
+             路线：
             </div>
-            <div class="hot_box fr col-md-3">
-                <div class="hot_goods">
-                    <h3>
-                        <div class="line"></div>
-                        <div class="line-txt">HOT同类热卖</div>
-                    </h3>
-                    <volist name="hot_goods" id="v">
-                        <div>
-                            <a target="_blank" href="{:U('goods/info',array('id'=>$v['goods_id']))}">
-                                <img src="{$v.pic_url}" alt="{$v.title}">
-                                <div class="hot_price">
-                                    <em class="hot_yang">￥</em>
-                                    <em class="hot_num">{$v.discount_price}</em>
-                                </div>
-                            </a>
-                        </div>
-                    </volist>
-                </div>
+            <div class="r_r">
+              <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">腾龙洞</a>
+              <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">玉龙洞</a>
+              <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">雪照河</a>
+              <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">观彩峡</a>
+              <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">朝东岩</a>
+              <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">恩施大峡谷</a>
+              <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">大茅坡云海</a>
+              <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">星斗山</a>
+              <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">毛坝</a>
             </div>
+           </div>
+          </div></li>
+         <li class="item current">
+          <div class="imgbox">
+           <a data-beacon="hotline" class="link" href="/index.php/Home/Travel/smd_path.shtml">
+           <img width="175" height="175" class="img" alt="神农溪五日游" src="/Public/Index/images/smd/x/x_two.jpg">
+            <div class="tit">
+             苏马荡旅游西线
+            </div></a>
+           <div class="titbg"></div>
+          </div>
+          <div class="desbox">
+           <div class="item_des" title="西线描述">
+             朝阳洞因洞穴面向东方而得名；齐岳山则是中国南方最大的山地草场；都亭山一带文化积淀深厚，不仅有南浦村、南浦雄关、苏马荡、齐岳山，而且还有船头寨、鱼木寨、女儿寨、人头寨、石桶寨、马头大寨、马头小寨等众多山寨，它是土家山寨的中心；水杉王是世界上树龄最大、胸径最粗的水杉母树；佛宝山平均海拔为1400米；龙船水乡是湖北利川市的重点景区之一。
+           </div>
+           <div class="item_des">
+            适合人群：所有人群
+           </div>
+           <div class="item_route">
+            <div class="r_l">
+             路线：
+            </div>
+            <div class="r_r">
+             <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">朝阳洞</a>
+             <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">齐岳山</a>
+             <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">都亭山</a>
+             <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">水杉王</a>
+             <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">苏马荡</a>
+             <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">船头寨</a>
+             <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">鱼木寨</a>
+             <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">女儿寨</a>
+             <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">佛宝山</a>
+             <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">清江源</a>
+             <a data-beacon="hotline_poi" href="javascript:void(0);" class="link">龙船水乡</a>
+            </div>
+           </div>
+          </div></li>
+        </ul>
+        <div class="more">
+         <a data-beacon="hotline_more" href="#">更多热门路线&nbsp;&nbsp;&gt;</a>
         </div>
-        <div class="clear"></div>
-    </div>
-    <!-- /主体 -->
-    <script type="text/javascript" src="__JS__/jquery.sticky.js"></script>
-    <script type="text/javascript"> // sticky nav bar 
-      $(function(){
-        $("div#bady-tab").sticky({topSpacing:0});
-      });
-    </script>
-
-</div>
-<div id="baom" style="display:none">
-<div id="baom_bg" onclick="CloseDiv()"></div>
-<script language="javascript" type="text/javascript" src="__JS__/WdatePicker.js"></script>
-    <div id="bao_content">
-    <div class="close" id="close" onclick="CloseDiv()" title="关闭">X</div>
-    <form action="{:U('Goods/info',array('id'=>$goods['goods_id'],'add'=>'do'))}" method="post">
-    <ul>
-        <li>
-            <h2>&nbsp;===&nbsp;旅游在线预定&nbsp;===</h2>
-        </li>
-        <li>
-            <label class="normal">旅游线路：</label>
-            <input class="normal-input title" readonly="" value="{$goods.title}"  autocomplete="off" type="text">
-        </li>
-        <li>
-            <label class="normal">出游时间：</label>
-            <input value="" class="normal-input" id="time" placeholder="请选择出行时间" name="time" autocomplete="off" type="text" onClick="WdatePicker({minDate:'%y-%M-%d'})">
-        </li>
-        <li>
-            <label class="normal">成人数：</label>
-            <input value="1" class="normal-input" id="num" placeholder="/人" name="num" autocomplete="off" type="text">
-            &nbsp;&nbsp;&nbsp;&nbsp;成人价：<font color="#f53">{$goods.discount_price}元/人</font>
-        </li>
-        <li>
-            <label class="normal">小孩数：</label>
-            <input value="0" class="normal-input" id="child" placeholder="/人" name="child" autocomplete="off" type="text">
-            &nbsp;&nbsp;&nbsp;&nbsp;小孩价： <font color="#f53">{$goods.child_price}元/人</font><br>&nbsp;&nbsp;&nbsp;&nbsp;（12周岁以下为小孩）
-        </li>
-        <li>
-            <label class="normal">您的姓名：</label>
-            <input value="" class="normal-input" id="name" placeholder="请输入您的姓名" name="name" autocomplete="off" type="text">
-            &nbsp;&nbsp;&nbsp;&nbsp;* 正确的联系人能帮助我们更快的联系到您
-        </li>
-        <li>
-            <label class="normal">您的电话：</label>
-            <input value="" class="normal-input" id="tel" placeholder="请输入您的手机号" name="tel" autocomplete="off" type="text">
-            &nbsp;&nbsp;&nbsp;&nbsp;* 推存填写手机号码，方便我们联系到您
-        </li>
-        <li>
-            <label class="normal">您的邮件：</label>
-            <input value="" class="normal-input" id="email" placeholder="请输入您的邮箱" name="email" autocomplete="off" type="text">
-            &nbsp;&nbsp;&nbsp;&nbsp;* 请填写你常用的邮箱，及时收取旅游优惠信息！
-        </li>
-        <li>
-            <label class="normal">您的地址：</label>
-            <input value="" class="normal-input" id="address" placeholder="请输入您的地址" name="address" autocomplete="off" type="text">
-            &nbsp;&nbsp;&nbsp;&nbsp;* 非常重要，方便我们上门接送！
-        </li>
-        <li>
-            <label class="normal">备注信息：</label>
-            <textarea name="desc">请填写您的留言</textarea>
-        </li>
-        <li>
-            <label class="normal"></label>
-            <div class="btn">
-                <input class="sub smt-o" value="提交" autocomplete="off" type="submit">
+       </div>
+       <!--热门路线结束 -->
+      </div>
+      <!--/filter_tag --> 
+      <div class="filter_area clrfix"> 
+       <div class="condition"> 
+        <dl class="item day"> 
+         <dt class="tit">
+           游记： 
+         </dt> 
+         <dd> 
+          <a href="/index.php/Home/Travel/glk.shtml" class="selected">全部</a> 
+         </dd> 
+         <dd> 
+          <a href="/index.php/Home/Travel/cate/cate/0.shtml" rel="nofollow">美食</a> 
+         </dd> 
+         <dd> 
+          <a href="/index.php/Home/Travel/cate/cate/3.shtml" rel="nofollow">美景</a> 
+         </dd>
+        </dl> 
+       </div> 
+      </div> 
+      <div class="gl_left_content">
+        <div class="img"><a href="/index.php/Home/Travel/travel/id/249.shtml"><img src="http://www.etimehouse.com/Uploads/coverimg/20150722/55af0835de98c.jpg"></a></div>
+          <div class="gl_left_right">
+            <div class="title_dt">
+              <h3><a href="/index.php/Home/Travel/travel/id/249.shtml">我的家乡--凤凰茶乡</a></h3>
+              <ul>
+                <li class="display">383</li>
+                <li class="time">共2天</li>
+              </ul>
             </div>
-        </li>
-    </ul>
-    </form>
-    </div>
-<script type="text/javascript">
-    // 百度地图API功能
-    var map = new BMap.Map("allmap");    // 创建Map实例
-    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
-    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
-    map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
-    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-</script>
-    <script type="text/javascript">
-//弹出隐藏层
-function ShowDiv(show_div){
-    $("#baom").css("display","block");//.css("width","100%").css("height","100%");
-};
-//关闭弹出层
-function CloseDiv()
-{
-     $("#baom").css("display","none");
-};
-$().ready(function(){
-    $("#time").blur(function(){if($(this).val() == "") $(this).focus()});
-    $("#num").blur(function(){if($(this).val() == "") $(this).focus()});
-    $("#child").blur(function(){if($(this).val() == "") $(this).focus()});
-    $("#name").blur(function(){if($(this).val() == "") $(this).focus()});
-    $("#tel").blur(function(){if($(this).val() == "") $(this).focus()});
-    $("#email").blur(function(){if($(this).val() == "") $(this).focus()});
-    $("#address").blur(function(){if($(this).val() == "") $(this).focus()});
+            <ul class="notes_info_tip">
+              <li class="gl_left_content4"><a href="#"><img src="http://www.etimehouse.com/Uploads/usersimg/20150601/556bc7593df50.jpg" class="gl_left_content4_img"></a></li>
+              <li class="gl_left_content5">不解释</li>
+              <li class="gl_left_content7">2015-07-01 11:00出发</li>
+              <li class="gl_left_content9">目的地：万州凤凰茶乡</li>
+            </ul>
+            <div class="notes_content"><b>说说这次旅行：</b> 
+              
+    凤凰茶乡是重庆市首个大型开放式乡村公园，位于万州区太安镇，距万州城区28公里、云阳县城15公里。公园面积15.3平方公里，其中核心区5.7平方公里，森林覆盖率达96%，负氧离子含量达到每立方厘米53000个；海拔950-1068米，夏季平均气温22.5℃，又一个夏季避暑好地方。 
 
-    $(".sub").click(function(){
-        if($("#time").val() == ""){
-            $("#time").focus();
-            return false;
-        }
-        if($("#num").val() == ""){
-            $("#num").focus();
-            return false;
-        }
-        if($("#child").val() == ""){ 
-            $("#child").focus();
-            return false;
-        }
-        if($("#name").val() == ""){
-            $("#name").focus();
-            return false;
-        }
-        if($("#tel").val() == ""){
-            $("#tel").focus();
-            return false;
-        }
-        if($("#email").val() == ""){
-            $("#email").focus();
-            return false;
-        }
-        if($("#address").val() == ""){
-            $("#address").focus();
-            return false;
-        }
-    });
-});
-</script>
+
+    
+ 
+            </div>
+          </div>
+       </div><div class="gl_left_content">
+        <div class="img"><a href="/index.php/Home/Travel/travel/id/248.shtml"><img src="http://www.etimehouse.com/Uploads/coverimg/20150722/55af082812324.jpg"></a></div>
+          <div class="gl_left_right">
+            <div class="title_dt">
+              <h3><a href="/index.php/Home/Travel/travel/id/248.shtml">五一去哪儿玩？与恋人私奔去云阳龙缸，为爱证言</a></h3>
+              <ul>
+                <li class="display">117</li>
+                <li class="time">共1天</li>
+              </ul>
+            </div>
+            <ul class="notes_info_tip">
+              <li class="gl_left_content4"><a href="#"><img src="http://www.etimehouse.com/Uploads/usersimg/20150601/556bc7593df50.jpg" class="gl_left_content4_img"></a></li>
+              <li class="gl_left_content5">不解释</li>
+              <li class="gl_left_content7">2015-04-27 08:10出发</li>
+              <li class="gl_left_content9">目的地：云阳龙缸</li>
+            </ul>
+            <div class="notes_content"><b>说说这次旅行：</b> 
+              
+    五一将至，浪漫热辣的夏天近在咫尺。恋人们心中是否想好了去哪儿欢度这样一个激情假日呢？3天时间出国太赶，不妨在国内寻一处神秘的爱情旅行地，带着爱人出发。 
+            </div>
+          </div>
+       </div><div class="gl_left_content">
+        <div class="img"><a href="/index.php/Home/Travel/travel/id/247.shtml"><img src="http://www.etimehouse.com/Uploads/coverimg/20150722/55af04b776359.jpg"></a></div>
+          <div class="gl_left_right">
+            <div class="title_dt">
+              <h3><a href="/index.php/Home/Travel/travel/id/247.shtml">见证历史沧桑的歌乐山烈士陵园</a></h3>
+              <ul>
+                <li class="display">106</li>
+                <li class="time">共1天</li>
+              </ul>
+            </div>
+            <ul class="notes_info_tip">
+              <li class="gl_left_content4"><a href="#"><img src="http://www.etimehouse.com/Uploads/usersimg/20150428/553f472f5f627.jpg" class="gl_left_content4_img"></a></li>
+              <li class="gl_left_content5">无良女</li>
+              <li class="gl_left_content7">2015-06-01 09:00出发</li>
+              <li class="gl_left_content9">目的地：重庆歌乐山</li>
+            </ul>
+            <div class="notes_content"><b>说说这次旅行：</b> 
+              
+      
+
+
+    景点类型：公园 
+
+
+    最佳季节：重庆终年气候潮湿，旅游的最佳时间在春、冬两季。 
+
+
+    建议游玩：1-3小时 
+
+
+    门票：免费 
+
+
+    开放时间：周一至周日 ( 全天开放 ) 
+
+
+
+    
+
+
+    走进歌乐山 
+
+
+    歌乐山地处沙坪坝区中部，距重庆市中心16公里。因大禹治水，召众宾歌乐于此而得名，素有“渝西第一峰，山城绿宝石”之美誉，是重庆市两大“肺叶”之一。&nbsp;歌乐山以抗战时期的陪都遗迹和白公馆、渣滓洞监狱而享誉全国，特别是随着长篇小说《红岩》在全国范围内的广泛流传，歌乐山更成为一座英雄的山脉。现在，歌乐山受欢迎的景点还包括了：森林公园、烈士陵园等等。&nbsp;歌乐山属于中梁山山脉，主要为喀斯特地貌，石灰岩运动较为活跃。近几年来，几乎每年都会出现一些奇特的地质现象。&nbsp;值得一提的是，歌乐山辣子鸡是闻名全国的一道特色美食。 
+
+
+    
+ 
+            </div>
+          </div>
+       </div><div class="gl_left_content">
+        <div class="img"><a href="/index.php/Home/Travel/travel/id/245.shtml"><img src="http://www.etimehouse.com/Uploads/coverimg/20150722/55af0512df9ea.jpg"></a></div>
+          <div class="gl_left_right">
+            <div class="title_dt">
+              <h3><a href="/index.php/Home/Travel/travel/id/245.shtml">打望山城之磁器口古镇--大足石刻--解放碑步行街</a></h3>
+              <ul>
+                <li class="display">94</li>
+                <li class="time">共1天</li>
+              </ul>
+            </div>
+            <ul class="notes_info_tip">
+              <li class="gl_left_content4"><a href="#"><img src="http://www.etimehouse.com/Uploads/usersimg/20150428/553f472f5f627.jpg" class="gl_left_content4_img"></a></li>
+              <li class="gl_left_content5">无良女</li>
+              <li class="gl_left_content7">2014-08-08 11:10出发</li>
+              <li class="gl_left_content9">目的地：重庆解放碑</li>
+            </ul>
+            <div class="notes_content"><b>说说这次旅行：</b> 
+              暂无信息            </div>
+          </div>
+       </div><div class="gl_left_content">
+        <div class="img"><a href="/index.php/Home/Travel/travel/id/244.shtml"><img src="http://www.etimehouse.com/Uploads/coverimg/20150722/55af055c98d9b.jpg"></a></div>
+          <div class="gl_left_right">
+            <div class="title_dt">
+              <h3><a href="/index.php/Home/Travel/travel/id/244.shtml">打望山城之重庆人民大礼堂--中国三峡博物馆--洪崖洞商业区</a></h3>
+              <ul>
+                <li class="display">104</li>
+                <li class="time">共2天</li>
+              </ul>
+            </div>
+            <ul class="notes_info_tip">
+              <li class="gl_left_content4"><a href="#"><img src="http://www.etimehouse.com/Uploads/usersimg/20150428/553f472f5f627.jpg" class="gl_left_content4_img"></a></li>
+              <li class="gl_left_content5">无良女</li>
+              <li class="gl_left_content7">2014-09-09 09:00出发</li>
+              <li class="gl_left_content9">目的地：重庆洪崖洞商业区</li>
+            </ul>
+            <div class="notes_content"><b>说说这次旅行：</b> 
+              
+    重庆山城，拥有独一无二的魅力。在这里，你问路不能说东南西北，要说上上下下，你前门进去，脚下是底层大厅，后门出来，脚下便是数米悬崖；在这里，你就算不能吃辣，也能吃了你爽到家；在这里，你可以无所事事的坐在解放碑广场，因为满眼的重庆妹子，就是最美的风景。每当夜幕降临，登高远眺，万家灯火，江面波光粼粼，中国城市最美的夜色不会让你失望。除此之外，三峡博物馆、歌乐山烈士陵园、磁器口古镇等等都是颇有民俗、历史的地方。重庆，一个非去不可的地方。 
+            </div>
+          </div>
+       </div><div class="gl_left_content">
+        <div class="img"><a href="/index.php/Home/Travel/travel/id/243.shtml"><img src="http://www.etimehouse.com/Uploads/coverimg/20150722/55af0818b8669.png"></a></div>
+          <div class="gl_left_right">
+            <div class="title_dt">
+              <h3><a href="/index.php/Home/Travel/travel/id/243.shtml">恩施龙麟宫--恩施土司城--恩施梭布垭风景区</a></h3>
+              <ul>
+                <li class="display">127</li>
+                <li class="time">共1天</li>
+              </ul>
+            </div>
+            <ul class="notes_info_tip">
+              <li class="gl_left_content4"><a href="#"><img src="http://www.etimehouse.com/Uploads/usersimg/20150601/556bc7593df50.jpg" class="gl_left_content4_img"></a></li>
+              <li class="gl_left_content5">不解释</li>
+              <li class="gl_left_content7">2013-08-08 09:20出发</li>
+              <li class="gl_left_content9">目的地：恩施土司城</li>
+            </ul>
+            <div class="notes_content"><b>说说这次旅行：</b> 
+              
+    早上吃完早餐,恩施的早餐确实有点小贵的,一碗面加牛奶13元.就直接在清江桥下一站坐13路公汽,直接到恩施龙麟宫,这是直达的.公汽车费一块,也可以打的,20元.因为去龙麟宫是不打表的。门票50元。 
+
+
+    一眼忘去,什么也没有... 
+
+
+    
+ 
+            </div>
+          </div>
+       </div><div class="gl_left_content">
+        <div class="img"><a href="/index.php/Home/Travel/travel/id/242.shtml"><img src="http://www.etimehouse.com/Uploads/coverimg/20150722/55af0403dae9e.jpeg"></a></div>
+          <div class="gl_left_right">
+            <div class="title_dt">
+              <h3><a href="/index.php/Home/Travel/travel/id/242.shtml">最炫名族风---咸丰坪坝营</a></h3>
+              <ul>
+                <li class="display">111</li>
+                <li class="time">共1天</li>
+              </ul>
+            </div>
+            <ul class="notes_info_tip">
+              <li class="gl_left_content4"><a href="#"><img src="http://www.etimehouse.com/Uploads/usersimg/20150601/556bc7593df50.jpg" class="gl_left_content4_img"></a></li>
+              <li class="gl_left_content5">不解释</li>
+              <li class="gl_left_content7">2014-08-06 10:00出发</li>
+              <li class="gl_left_content9">目的地：恩施咸丰坪坝营</li>
+            </ul>
+            <div class="notes_content"><b>说说这次旅行：</b> 
+              
+    咸丰坪坝营生态旅游区位于恩施土家族苗族自治州咸丰县。坪坝营原始生态旅游区是一块旅游开发的处女地，除基础设施进行标准化建设外，景区景点仍保持着原始风貌，接待服务设施也保留着土家族、苗族等民族特色。 
+
+
+      
+
+
+    原始森林里面总有着意想不到的惊喜。 
+
+
+
+    
+            </div>
+          </div>
+       </div>      <div class="more"><a target="_blank" href="/index.php/Home/Travel/glk.shtml">点击查看更多&gt;&gt;</a></div>
+     </div>     
+    </div>  
+  <div class="qn_main_ct_r"> 
+      <div class="r_ticket_c">
+       <div class="r_c_head">
+        热门目的地<!-- <a href="" class="r_c_more" data-beacon="selling_ticket_more">更多</a> -->
+       </div>
+       <div class="r_ticket_list">
+        <table>
+         <tbody>
+          <tr>
+           <td width="150" align="left" title="苏马荡"><a class="colo6" href="/index.php/Home/Travel/destination/id/5.shtml">苏马荡</a></td>
+           <td class="colo9" align="left" width="60"><span class="coloY">948</span>人已浏览</td> 
+          </tr><tr>
+           <td width="150" align="left" title="腾龙洞"><a class="colo6" href="/index.php/Home/Travel/destination/id/6.shtml">腾龙洞</a></td>
+           <td class="colo9" align="left" width="60"><span class="coloY">681</span>人已浏览</td> 
+          </tr><tr>
+           <td width="150" align="left" title="将军岩"><a class="colo6" href="/index.php/Home/Travel/destination/id/8.shtml">将军岩</a></td>
+           <td class="colo9" align="left" width="60"><span class="coloY">649</span>人已浏览</td> 
+          </tr><tr>
+           <td width="150" align="left" title="鱼木寨"><a class="colo6" href="/index.php/Home/Travel/destination/id/9.shtml">鱼木寨</a></td>
+           <td class="colo9" align="left" width="60"><span class="coloY">616</span>人已浏览</td> 
+          </tr><tr>
+           <td width="150" align="left" title="大峡谷"><a class="colo6" href="/index.php/Home/Travel/destination/id/17.shtml">大峡谷</a></td>
+           <td class="colo9" align="left" width="60"><span class="coloY">608</span>人已浏览</td> 
+          </tr><tr>
+           <td width="150" align="left" title="朝天门"><a class="colo6" href="/index.php/Home/Travel/destination/id/15.shtml">朝天门</a></td>
+           <td class="colo9" align="left" width="60"><span class="coloY">594</span>人已浏览</td> 
+          </tr><tr>
+           <td width="150" align="left" title="洪崖洞"><a class="colo6" href="/index.php/Home/Travel/destination/id/14.shtml">洪崖洞</a></td>
+           <td class="colo9" align="left" width="60"><span class="coloY">575</span>人已浏览</td> 
+          </tr><tr>
+           <td width="150" align="left" title="佛宝山"><a class="colo6" href="/index.php/Home/Travel/destination/id/12.shtml">佛宝山</a></td>
+           <td class="colo9" align="left" width="60"><span class="coloY">516</span>人已浏览</td> 
+          </tr><tr>
+           <td width="150" align="left" title="垭石林"><a class="colo6" href="/index.php/Home/Travel/destination/id/13.shtml">垭石林</a></td>
+           <td class="colo9" align="left" width="60"><span class="coloY">514</span>人已浏览</td> 
+          </tr>         </tbody>
+        </table>
+       </div>
+      <div style="margin-top:30px;height:150px;">
+       <img src="/Public/Index/images/guanggao1.jpg" width="330px" height="150px">
+     </div>
+     </div> 
+     <div class="r_ticket_other">
+       <h3 class="ctd_side_titile title_top">自游网官方微博</h3>
+       <iframe width="100%" height="582" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&amp;width=0&amp;height=582&amp;fansRow=2&amp;ptype=1&amp;speed=100&amp;skin=1&amp;isTitle=0&amp;noborder=0&amp;isWeibo=1&amp;isFans=1&amp;uid=5427772833&amp;verifier=66cef3ce&amp;dpc=1"></iframe>
+     </div>
+       
+   </div> 
+     <div style="clear:both">
+    
+   </div> 
+  </div>
+    </div>    
 </div>
 </div>
 </block>
