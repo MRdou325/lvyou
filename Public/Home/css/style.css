@@ -278,6 +278,7 @@ color: #f60;
 .good-deal-tile{
     border: 1px solid #eee;
     border-top: 0px;
+    padding: 0px;
 }
 .good-deal-tile a.deal-tile__img{
     display: block;
@@ -289,4 +290,73 @@ padding: 12px 15px 0;
 .good-deal-tile a.deal-tile__img img{
     width: 100%;
     border: 0px;
+    height: auto;
+}
+.deal-tile__title {
+margin: 12px 0 0;
+padding: 0 15px 5px;
+}
+.deal-tile__title .short-title, .deal-tile__title .xtitle {
+display: block;
+-moz-transition-property: color;
+-o-transition-property: color;
+-webkit-transition-property: color;
+transition-property: color;
+-moz-transition-duration: .2s;
+-o-transition-duration: .2s;
+-webkit-transition-duration: .2s;
+transition-duration: .2s;
+height: 24px;
+line-height: 24px;
+}
+.deal-tile__title .xtitle {
+font-size: 14px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+text-indent: -.5em;
+_width: 306px;
+margin-bottom: 0;
+color: #666;
+}
+.deal-tile__title .short-title {
+line-height: 18px;
+color: #999;
+font-weight: 400;
+font-size: 13px;
+height: 37px;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.deal-tile__detail {
+margin-bottom: 10px;
+padding: 0 15px;
+height: 30px;
+color: #999;
+}
+.deal-tile__detail .extra-inner {
+border-top: 1px dotted #ddd;
+padding: 0;
+height: 30px;
+}
+.deal-tile__detail .price {
+font-size: 14px;
+font-family: arial,sans-serif;
+}
+.deal-tile__detail .price strong {
+font-size: 20px;
+font-weight: 400;
+margin: .1em;
+color: #f76120;
+}
+.deal-tile__detail .rate-info {
+float: right;
+margin-top: 8px;
+font-size: 12px;
+font-weight: 400;
+}
+.deal-tile__detail .sales .num {
+font-weight: 400;
+font-family: arial,sans-serif;
+font-size: 12px;
 }
