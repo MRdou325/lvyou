@@ -395,3 +395,52 @@ font-size: 18px;
 color: #666;
 margin-top: 10px;
 }
+
+.goodsinfo {
+    padding: 0px; 
+}
+.goods-name{
+    height: 85px;
+    padding: 0 10px;
+}
+.goods-name .tit{
+    line-height: 85px;
+    padding: 0;
+    margin: 0;
+}
+.goods-img
+{
+    padding: 0px;
+}
+.goods-img .goods-imgbox img{
+    width: 100%;
+}
+
+.goodsinfo .destination
+{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.goodsinfo .destination .destination-left h3 {
+padding-left: 5px;
+border-bottom: 2px solid #7fc1c5;
+font-size: 20px;
+height: 40px;
+line-height: 40px;
+font-weight: normal;
+margin: 10px 0;
+}
+.goodsinfo .destination .destination-right{
+    padding-left: 0px;
+}
+
+.goodsinfo .destination .destination-right h3 {
+border-left: 3px solid #7fc1c5;
+font-size: 20px;
+line-height: 24px;
+height: 24px;
+padding-left: 8px;
+margin-bottom: 10px;
+border-bottom: 0;
+background: #fff;
+}

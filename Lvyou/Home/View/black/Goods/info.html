@@ -7,33 +7,47 @@
 <block name="body">
 <div class="row-fluid">
   <div class="container">
-    <div class="goods bg-white">
+    <div class="goodsinfo bg-white">
     <php>if($msg){</php><div class="msg">{$msg}</div><php>}</php>
         <!--items start-->
-        <div class="destination-top col-md-12"> 
-            <h1 class="tit col-md-12">{:cutstr($goods['title'],100)}</h1> 
+        <div class="goods-name col-md-12"> 
+            <h1 class="tit">{:cutstr($goods['title'],100)}</h1> 
         </div>
-        <div class="destination-carousel col-md-12">
-            <div class="e_destination_imgbox col-md-8 col-sm-12">
+        <div class="goods-img col-md-12">
+            <div class="goods-imgbox">
                 <img alt="{$goods['title']}" src="{$goods['pic_url']}" >
-            </div>
-            <div class="e_destination_txtbox col-md-3 col-sm-12">
-                <div class="b_title clrfix">
-                    <h1 class="tit">{$goods['name']}</h1>
-                    <div class="entit"></div>
-                </div>
-               <div class="countbox">
-                <div class="c_item">&nbsp;&nbsp;{$goods['summary']}</div>
-               </div>
             </div>
         </div>
         <div class="destination col-md-12">
             <div class="destination-left col-md-8 col-sm-12">
+                <h3>详细介绍</h3>
+                <div class="goods-destination">
+                    {$goods['item_body']}
+                </div>
+                <h3>评论</h3>
+                <div class="goods-comments"></div>
             </div>
             <div class="destination-right col-md-3 col-sm-12">
+                <h3>地图位置</h3>
                 <div class="baidu_map">
                     <div id="allmap"></div>
                 </div>
+                <h3>相关内容</h3>
+                <h3>分享</h3>
+                <!-- JiaThis Button BEGIN -->
+                <div class="jiathis_style_24x24">
+                    <a class="jiathis_button_qzone"></a>
+                    <a class="jiathis_button_tsina"></a>
+                    <a class="jiathis_button_tqq"></a>
+                    <a class="jiathis_button_weixin"></a>
+                    <a class="jiathis_button_renren"></a>
+                    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                    <a class="jiathis_counter_style"></a>
+                </div>
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+                <div class="clear"></div>
+                <h3>标签</h3>
             </div>
         </div>
         <div class="show_box fl col-md-12">
