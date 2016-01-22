@@ -88,4 +88,12 @@ class GoodsController extends HomeController{
             $this->error('商品不存在');
         }
     }
+
+    public function news(){
+        $this->display();
+    }
+
+    public function raiders(){
+        $this->display();
+    }
 }
