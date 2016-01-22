@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015-11-20 21:22:12
+-- 生成日期: 2016-01-22 18:52:28
 -- 服务器版本: 5.6.11
 -- PHP 版本: 5.5.1
 
@@ -811,6 +811,7 @@ CREATE TABLE IF NOT EXISTS `ly_category_goods` (
   `category_name` varchar(255) NOT NULL DEFAULT '' COMMENT '宝贝分类名称',
   `type` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `catepic_url` varchar(250) DEFAULT NULL,
+  `summary` varchar(500) DEFAULT NULL,
   `ad_url` varchar(250) DEFAULT NULL,
   `color` varchar(30) NOT NULL,
   `p_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '所属店铺',
@@ -829,21 +830,21 @@ CREATE TABLE IF NOT EXISTS `ly_category_goods` (
 -- 转存表中的数据 `ly_category_goods`
 --
 
-INSERT INTO `ly_category_goods` (`id`, `category_name`, `type`, `catepic_url`, `ad_url`, `color`, `p_id`, `goods_num`, `home_num`, `is_home`, `sku`, `is_home_banner`, `is_home_banner_type`, `status`, `sort`) VALUES
-(1, '国内', 1, '', '', 'green', 0, 0, 8, 1, 'GN', 1, 2, 1, 0),
-(2, '境外', 1, '', '', 'green', 0, 0, 8, 1, 'JW', 1, 0, 1, 0),
-(9, '酒店', 1, '', '', 'green', 4, 0, 0, 1, 'SKU001', 0, 0, 1, 0),
-(11, '北京', 1, '', '', '', 10, 0, 0, 1, 'SKU001', 0, 0, 1, 0),
-(12, '福建', 1, '', '', '', 10, 0, 0, 1, 'SKU001', 0, 0, 1, 0),
-(13, '厦门', 1, '', '', '', 12, 0, 0, 0, 'SKU001', 0, 0, 1, 0),
-(14, '风景区', 1, '', '', 'green', 4, 0, 0, 0, '', 0, 0, 1, 0),
-(15, '厦门', 1, '', '', 'green', 1, 0, 0, 0, '', 0, 0, 1, 0),
-(16, '上海', 1, '', '', 'green', 1, 0, 0, 0, '', 0, 0, 1, 0),
-(17, '北京', 1, '', '', 'green', 1, 0, 0, 1, '', 0, 0, 1, 0),
-(18, '周边资讯', 1, '', '', 'green', 2, 0, 0, 0, '', 0, 0, 1, 0),
-(19, '国内资讯', 1, '', '', 'green', 2, 0, 0, 1, '', 0, 0, 1, 0),
-(20, '境外资讯', 1, '', '', 'green', 2, 0, 0, 1, '', 0, 0, 1, 0),
-(21, '周边攻略', 1, '', '', 'green', 3, 0, 0, 0, '', 0, 0, 0, 0);
+INSERT INTO `ly_category_goods` (`id`, `category_name`, `type`, `catepic_url`, `summary`, `ad_url`, `color`, `p_id`, `goods_num`, `home_num`, `is_home`, `sku`, `is_home_banner`, `is_home_banner_type`, `status`, `sort`) VALUES
+(1, '国内', 1, '', '', '', 'green', 0, 0, 8, 1, 'GN', 1, 2, 1, 0),
+(2, '境外', 1, '', '', '', 'green', 0, 0, 8, 1, 'JW', 1, 0, 1, 0),
+(9, '酒店', 1, '', '', '', 'green', 4, 0, 0, 1, 'SKU001', 0, 0, 1, 0),
+(11, '北京', 1, '', '', '', '', 10, 0, 0, 1, 'SKU001', 0, 0, 1, 0),
+(12, '福建', 1, '', '', '', '', 10, 0, 0, 1, 'SKU001', 0, 0, 1, 0),
+(13, '厦门', 1, '/ke361/Uploads/site_logo/55cafb3fe40e4.jpg', '', '', '', 12, 0, 0, 0, 'SKU001', 0, 0, 1, 0),
+(14, '风景区', 1, '', '', '', 'green', 4, 0, 0, 0, '', 0, 0, 1, 0),
+(15, '厦门', 1, '/ke361/Uploads/site_logo/55cafb3fe40e4.jpg', '厦门市（英文：Amoy），别称鹭岛，简称鹭，位于福建省东南端，南接漳州，北邻泉州，东南与大小金门和大担岛隔海相望。是闽南地区的主要城市之一，与漳州、泉州并称“厦漳泉”，闽南金三角经济区。', '', 'green', 1, 0, 0, 0, '', 0, 0, 1, 0),
+(16, '上海', 1, '', '', '', 'green', 1, 0, 0, 0, '', 0, 0, 1, 0),
+(17, '北京', 1, '', '', '', 'green', 1, 0, 0, 1, '', 0, 0, 1, 0),
+(18, '周边资讯', 1, '', '', '', 'green', 2, 0, 0, 0, '', 0, 0, 1, 0),
+(19, '国内资讯', 1, '', '', '', 'green', 2, 0, 0, 1, '', 0, 0, 1, 0),
+(20, '境外资讯', 1, '', '', '', 'green', 2, 0, 0, 1, '', 0, 0, 1, 0),
+(21, '周边攻略', 1, '', '', '', 'green', 3, 0, 0, 0, '', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1142,8 +1143,8 @@ CREATE TABLE IF NOT EXISTS `ly_goods` (
 --
 
 INSERT INTO `ly_goods` (`goods_id`, `goods_type`, `num_iid`, `title`, `cate_id`, `tid`, `add_id`, `add_uname`, `city`, `days`, `aheaddays`, `traffic`, `invite`, `audition`, `maxdays`, `discount_price`, `price`, `child_price`, `pic_url`, `item_body`, `status`, `seo_title`, `seo_keywords`, `seo_description`, `ctime`, `hits`, `favor`, `sort`, `tags`) VALUES
-(473, 2, '0', '【曾厝垵】格兰会法餐厅米其林下午茶套餐', 15, 0, 1, 'Admin', '', 0, 0, '', 0, 0, 0, '0.00', '58.00', '0.00', '/Uploads/goods_img/2015-11-16/5649a62597941.jpg', '<p>\r\n	<span><span style="font-size:14px;line-height:21px;">&nbsp;&nbsp;&nbsp;&nbsp;\r\n	<p style="font-size:14px;font-family:''Hiragino Sans GB'', '' Microsoft YaHei'', ''WenQuanYi Micro Hei'', arial, sans-serif;color:#333333;background-color:#FFFFFF;">\r\n		<a class="poi-link" href="http://www.meituan.com/shop/1884752" target="_blank" id="yui_3_16_0_1_1447664992823_2932">格兰会法餐厅</a>\r\n	</p>\r\n	<p style="font-size:14px;font-family:''Hiragino Sans GB'', '' Microsoft YaHei'', ''WenQuanYi Micro Hei'', arial, sans-serif;color:#333333;background-color:#FFFFFF;">\r\n		<span style="color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;font-weight:normal;">地址：思明区环岛路音乐广场</span>\r\n	</p>\r\n	<div class="biz-info__content" id="yui_3_16_0_1_1447664992823_2831" style="margin:0px;padding:0px;color:#333333;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;background-color:#FFFFFF;">\r\n		<div class="biz-item" id="yui_3_16_0_1_1447664992823_2452" style="margin:0px;padding:0px;color:#666666;">\r\n		</div>\r\n		<div class="biz-item" id="yui_3_16_0_1_1447664992823_2833" style="margin:0px;padding:0px;color:#666666;">\r\n			<span class="title-label" style="color:#333333;">电话：</span>0592-8108880\r\n		</div>\r\n	</div>\r\n<br />\r\n</span></span>\r\n</p>\r\n<ul class="list" id="yui_3_16_0_1_1447664992823_2930" style="color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;font-size:14px;background-color:#FFFFFF;">\r\n	<li>\r\n		免费提供餐巾纸\r\n	</li>\r\n	<li>\r\n		米其林英式下午茶套餐：\r\n	</li>\r\n	<li>\r\n		4款甜点点心+1杯现磨咖啡或鲜榨果汁\r\n	</li>\r\n	<li>\r\n		迷你巧克力牛角包\r\n	</li>\r\n	<li>\r\n		Mini Chocolate Croissant\r\n	</li>\r\n	<li>\r\n		迷你格兰会法餐厅三明治\r\n	</li>\r\n	<li>\r\n		Mini Club Sandwich\r\n	</li>\r\n	<li>\r\n		覆盆子马芬蛋糕\r\n	</li>\r\n	<li>\r\n		Raspberry Muffin\r\n	</li>\r\n	<li>\r\n		提拉米苏\r\n	</li>\r\n	<li id="yui_3_16_0_1_1447664992823_2929">\r\n		Tiramisu\r\n	</li>\r\n</ul>\r\n<p>\r\n	<span><span style="font-size:14px;line-height:21px;"><img src="/lvyou/uploads/goods_img/image/20151116/20151116104950_33538.jpg" alt="" /><br />\r\n</span></span>\r\n</p>\r\n<p>\r\n	<span><span style="font-size:14px;line-height:21px;"><img src="/lvyou/uploads/goods_img/image/20151116/20151116105004_50992.jpg" alt="" /><br />\r\n</span></span>\r\n</p>\r\n<p>\r\n	<span><span style="font-size:14px;line-height:21px;"><span style="color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;font-size:14px;line-height:24px;background-color:#FFFFFF;">海明威说“巴黎是一场流动的飨宴” 在格蘭會法餐厅，一切法式的浪漫随想，都可以触摸与品尝—— 从环岛路的温沙，到地中海岸线。 香颂挠耳，无论您决意完整地领略高卢贵族的佳肴美宴，或是犹豫只在咖啡斟满时、杯酒晃动间体验法兰西风情的点滴，格蘭會逾两千平米的空间皆可与您的心境完美交融--与环岛路沙滩接壤的一楼阳光长廊、大厅；坐拥180度通透海景的的尼斯厅，到二、三楼的七间VIP包房、红酒雪茄房，在品游法兰西文化精髓时，留步格蘭會的每一扇窗前，您都能驾驭一帧独一无二的广阔海景和无垠的心境。 米其林三星厨师Philip每日严选进口高级食材， 将地中海阳光与海水的鲜美空运至每位食客的舌尖。 从法国到印度洋上的珍珠塞舌尔，Chef Philip料理过全球50佳餐厅JAAN par Andre和英国时代周刊评选的印度洋上的优越餐桌，这一次邀您在鹭岛海岸优雅入席，从触指前菜的第一刻开始，Chef Philip将在格蘭會带您跟随季风赴一场正统的法式饕餮之旅。</span><br />\r\n</span></span>\r\n</p>', 1, '【曾厝垵】格兰会法餐厅米其林下午茶套餐', '厦门，曾厝垵，格兰会，法国餐厅，米其林，下午茶', '从法国到印度洋上的珍珠塞舌尔，Chef Philip料理过全球50佳餐厅JAAN par Andre和英国时代周刊评选的印度洋上的优越餐桌，这一次邀您在鹭岛海岸优雅入席，从触指前菜的第一刻开始，Chef Philip将在格蘭會带您跟随季风赴一场正统的法式饕餮之旅。​', 0, 1, 0, 0, NULL),
-(472, 1, '0', '海边民墅', 15, 0, 1, 'Admin', '', 0, 0, '', 0, 0, 0, '0.00', '98.00', '0.00', '/Uploads/goods_img/2015-11-12/5644627e8bbee.jpg', '<div class="poi-hotelinfo__content cf" id="yui_3_16_0_1_1447322053361_2241" style="margin:0px;padding:20px;color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;background-color:#FFFFFF;">\r\n	联系方式15980866861酒店信息层高4层酒店简介厦门海边民墅位于美丽的环岛路－黄厝塔头128号。步行200米就可以到达海边，音乐广场、书法广场、小白鹭艺术中心围绕周边，艺术氛围浓厚。这里到胡里山炮台、厦门大学、南普陀乘公交6分钟即可。到中山路步行街（厦门繁华的商业街）、轮渡码头（前往鼓浪屿）乘公交15分钟左右。客栈在靠海(厦门环岛路）的渔村里，步行3分钟即可拥抱大海，漫步沙滩，徜徉环岛路，流连厦门大学，朝与学子相伴，暮赏凤凰花开，无限风华尽揽！\r\n</div>\r\n<div class="poi-hotelinfo__content-list cf" style="margin:0px;padding:8px 20px;color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;background-color:#FFFFFF;">\r\n	酒店设施暂无\r\n</div>\r\n<div class="poi-hotelinfo__content-list cf" id="yui_3_16_0_1_1447322053361_2238" style="margin:0px;padding:8px 20px;color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;background-color:#FFFFFF;">\r\n	酒店服务停车场 <span class="poi-hotelinfo__item">wifi</span> \r\n</div>\r\n<div class="poi-hotelinfo__content-list cf" style="margin:0px;padding:8px 20px;color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;background-color:#FFFFFF;">\r\n	房间设施电吹风 <span class="poi-hotelinfo__item">上网方式</span> <span class="poi-hotelinfo__item">24小时热水</span> <span class="poi-hotelinfo__item">独立卫生间</span> <span class="poi-hotelinfo__item">淋浴</span> <span class="poi-hotelinfo__item">洗漱工具</span> \r\n</div>', 1, '厦门海边民墅', '厦门，海边，民墅', '厦门海边民墅位于美丽的环岛路－黄厝塔头128号。步行200米就可以到达海边，音乐广场、书法广场、小白鹭艺术中心围绕周边，艺术氛围浓厚。', 0, 2, 0, 0, NULL);
+(473, 2, '0', '【曾厝垵】格兰会法餐厅米其林下午茶套餐', 15, 0, 1, 'Admin', '', 0, 0, '', 0, 0, 0, '0.00', '58.00', '0.00', '/Uploads/goods_img/2015-11-16/5649a62597941.jpg', '<p>\r\n	<span><span style="font-size:14px;line-height:21px;">&nbsp;&nbsp;&nbsp;&nbsp;\r\n	<p style="font-size:14px;font-family:''Hiragino Sans GB'', '' Microsoft YaHei'', ''WenQuanYi Micro Hei'', arial, sans-serif;color:#333333;background-color:#FFFFFF;">\r\n		<a class="poi-link" href="http://www.meituan.com/shop/1884752" target="_blank" id="yui_3_16_0_1_1447664992823_2932">格兰会法餐厅</a>\r\n	</p>\r\n	<p style="font-size:14px;font-family:''Hiragino Sans GB'', '' Microsoft YaHei'', ''WenQuanYi Micro Hei'', arial, sans-serif;color:#333333;background-color:#FFFFFF;">\r\n		<span style="color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;font-weight:normal;">地址：思明区环岛路音乐广场</span>\r\n	</p>\r\n	<div class="biz-info__content" id="yui_3_16_0_1_1447664992823_2831" style="margin:0px;padding:0px;color:#333333;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;background-color:#FFFFFF;">\r\n		<div class="biz-item" id="yui_3_16_0_1_1447664992823_2452" style="margin:0px;padding:0px;color:#666666;">\r\n		</div>\r\n		<div class="biz-item" id="yui_3_16_0_1_1447664992823_2833" style="margin:0px;padding:0px;color:#666666;">\r\n			<span class="title-label" style="color:#333333;">电话：</span>0592-8108880\r\n		</div>\r\n	</div>\r\n<br />\r\n</span></span>\r\n</p>\r\n<ul class="list" id="yui_3_16_0_1_1447664992823_2930" style="color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;font-size:14px;background-color:#FFFFFF;">\r\n	<li>\r\n		免费提供餐巾纸\r\n	</li>\r\n	<li>\r\n		米其林英式下午茶套餐：\r\n	</li>\r\n	<li>\r\n		4款甜点点心+1杯现磨咖啡或鲜榨果汁\r\n	</li>\r\n	<li>\r\n		迷你巧克力牛角包\r\n	</li>\r\n	<li>\r\n		Mini Chocolate Croissant\r\n	</li>\r\n	<li>\r\n		迷你格兰会法餐厅三明治\r\n	</li>\r\n	<li>\r\n		Mini Club Sandwich\r\n	</li>\r\n	<li>\r\n		覆盆子马芬蛋糕\r\n	</li>\r\n	<li>\r\n		Raspberry Muffin\r\n	</li>\r\n	<li>\r\n		提拉米苏\r\n	</li>\r\n	<li id="yui_3_16_0_1_1447664992823_2929">\r\n		Tiramisu\r\n	</li>\r\n</ul>\r\n<p>\r\n	<span><span style="font-size:14px;line-height:21px;"><img src="/lvyou/uploads/goods_img/image/20151116/20151116104950_33538.jpg" alt="" /><br />\r\n</span></span>\r\n</p>\r\n<p>\r\n	<span><span style="font-size:14px;line-height:21px;"><img src="/lvyou/uploads/goods_img/image/20151116/20151116105004_50992.jpg" alt="" /><br />\r\n</span></span>\r\n</p>\r\n<p>\r\n	<span><span style="font-size:14px;line-height:21px;"><span style="color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;font-size:14px;line-height:24px;background-color:#FFFFFF;">海明威说“巴黎是一场流动的飨宴” 在格蘭會法餐厅，一切法式的浪漫随想，都可以触摸与品尝—— 从环岛路的温沙，到地中海岸线。 香颂挠耳，无论您决意完整地领略高卢贵族的佳肴美宴，或是犹豫只在咖啡斟满时、杯酒晃动间体验法兰西风情的点滴，格蘭會逾两千平米的空间皆可与您的心境完美交融--与环岛路沙滩接壤的一楼阳光长廊、大厅；坐拥180度通透海景的的尼斯厅，到二、三楼的七间VIP包房、红酒雪茄房，在品游法兰西文化精髓时，留步格蘭會的每一扇窗前，您都能驾驭一帧独一无二的广阔海景和无垠的心境。 米其林三星厨师Philip每日严选进口高级食材， 将地中海阳光与海水的鲜美空运至每位食客的舌尖。 从法国到印度洋上的珍珠塞舌尔，Chef Philip料理过全球50佳餐厅JAAN par Andre和英国时代周刊评选的印度洋上的优越餐桌，这一次邀您在鹭岛海岸优雅入席，从触指前菜的第一刻开始，Chef Philip将在格蘭會带您跟随季风赴一场正统的法式饕餮之旅。</span><br />\r\n</span></span>\r\n</p>', 1, '【曾厝垵】格兰会法餐厅米其林下午茶套餐', '厦门，曾厝垵，格兰会，法国餐厅，米其林，下午茶', '从法国到印度洋上的珍珠塞舌尔，Chef Philip料理过全球50佳餐厅JAAN par Andre和英国时代周刊评选的印度洋上的优越餐桌，这一次邀您在鹭岛海岸优雅入席，从触指前菜的第一刻开始，Chef Philip将在格蘭會带您跟随季风赴一场正统的法式饕餮之旅。​', 0, 38, 0, 0, NULL),
+(472, 1, '0', '海边民墅', 15, 0, 1, 'Admin', '', 0, 0, '', 0, 0, 0, '0.00', '98.00', '0.00', '/Uploads/goods_img/2015-11-12/5644627e8bbee.jpg', '<div class="poi-hotelinfo__content cf" id="yui_3_16_0_1_1447322053361_2241" style="margin:0px;padding:20px;color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;background-color:#FFFFFF;">\r\n	联系方式15980866861酒店信息层高4层酒店简介厦门海边民墅位于美丽的环岛路－黄厝塔头128号。步行200米就可以到达海边，音乐广场、书法广场、小白鹭艺术中心围绕周边，艺术氛围浓厚。这里到胡里山炮台、厦门大学、南普陀乘公交6分钟即可。到中山路步行街（厦门繁华的商业街）、轮渡码头（前往鼓浪屿）乘公交15分钟左右。客栈在靠海(厦门环岛路）的渔村里，步行3分钟即可拥抱大海，漫步沙滩，徜徉环岛路，流连厦门大学，朝与学子相伴，暮赏凤凰花开，无限风华尽揽！\r\n</div>\r\n<div class="poi-hotelinfo__content-list cf" style="margin:0px;padding:8px 20px;color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;background-color:#FFFFFF;">\r\n	酒店设施暂无\r\n</div>\r\n<div class="poi-hotelinfo__content-list cf" id="yui_3_16_0_1_1447322053361_2238" style="margin:0px;padding:8px 20px;color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;background-color:#FFFFFF;">\r\n	酒店服务停车场 <span class="poi-hotelinfo__item">wifi</span> \r\n</div>\r\n<div class="poi-hotelinfo__content-list cf" style="margin:0px;padding:8px 20px;color:#666666;font-family:''Hiragino Sans GB'', ''WenQuanYi Micro Hei'', tahoma, sans-serif;background-color:#FFFFFF;">\r\n	房间设施电吹风 <span class="poi-hotelinfo__item">上网方式</span> <span class="poi-hotelinfo__item">24小时热水</span> <span class="poi-hotelinfo__item">独立卫生间</span> <span class="poi-hotelinfo__item">淋浴</span> <span class="poi-hotelinfo__item">洗漱工具</span> \r\n</div>', 1, '厦门海边民墅', '厦门，海边，民墅', '厦门海边民墅位于美丽的环岛路－黄厝塔头128号。步行200米就可以到达海边，音乐广场、书法广场、小白鹭艺术中心围绕周边，艺术氛围浓厚。', 0, 4, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -1540,7 +1541,14 @@ CREATE TABLE IF NOT EXISTS `ly_news` (
   `source` varchar(256) NOT NULL DEFAULT '0',
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `ly_news`
+--
+
+INSERT INTO `ly_news` (`id`, `cate_id`, `title`, `pic`, `summary`, `content`, `status`, `source`, `time`) VALUES
+(1, 2, '旅游签证', NULL, '旅游签证（tourist visa）是签证的一种，一般是为了方便游客而开发旅游资源而设立的一种快速办理签证方式，相应的，受限制也大，一般来说有效期和停留期都较短，且只能够用来从事旅游相关的活动。', '旅游签证（tourist visa）是签证的一种，一般是为了方便游客而开发旅游资源而设立的一种快速办理签证方式，相应的，受限制也大，一般来说有效期和停留期都较短，且只能够用来从事旅游相关的活动。\r\n随着世界全球化得发展和交通技术的不断进步，世界旅游市场的不断壮大，可以预见，旅游签证变得更加普遍和便利，成为签证的又一主要形式，很多国家为促进当地旅游业专门为来访旅游者颁发旅游签证。\r\n旅游签证是签证种类中的一种，有一些国家专门为旅游者颁发旅游签证，即：“tourist visa”。旅游签证的特点是停留期短，一般为30天，最长为90天，一般不能延期。持旅游签证者不能在当地打工或从事与旅游无关的活动。团体旅游签证是旅游签证中的一种，其特点是签证不做在护照上，旅游者须随团集体出、入国境。', 0, 'http://baike.baidu.com/link?url=BdiqKI3ec-otLgFOMR_8CdpdW_5vWu_8BgXInuGbSfaG3J06mue-XhEX8h0DYKC_HC-V9PIi_MtdhnQD-JX29_', '2015-11-23 06:54:29');
 
 -- --------------------------------------------------------
 
@@ -1703,7 +1711,14 @@ CREATE TABLE IF NOT EXISTS `ly_raiders` (
   `sort` smallint(3) unsigned NOT NULL DEFAULT '0',
   `tags` text,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `ly_raiders`
+--
+
+INSERT INTO `ly_raiders` (`Id`, `name`, `title`, `cate_id`, `add_id`, `add_uname`, `city`, `days`, `traffic`, `price`, `pic_url`, `item_body`, `status`, `seo_title`, `seo_keywords`, `seo_description`, `ctime`, `hits`, `favor`, `sort`, `tags`) VALUES
+(1, '带上含含去拉萨', '带上含含去拉萨', 0, 0, 'Admin', '拉萨', 0, '15', '14017.00', '', '坐上那火车去拉萨～～～～\r\n第一天在火车上，第二天....还在火车上\r\nEB73240276\r\n记得手机充好电，充电宝充好电，带够吃的喝的 .。。。。。', 1, '', '', '', 0, 0, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
