@@ -555,3 +555,17 @@ background: #09AFE0;
 border-radius: 50%;
 display: inline-block;
 }
+
+.raiders .raiders-content-info .plan_item_inner{
+	line-height: 38px;
+}
+.raiders .raiders-content-info .plan_item_inner .plan_money{
+	float: right;
+}
+.raiders .raiders-content-info .plan_item_inner .plan_title{
+	font-size:16px;
+	font-weight: bold;
+}
+.raiders .raiders-content-info .plan_item_inner .plan_desc{
+	font-size: 12px;
+}
