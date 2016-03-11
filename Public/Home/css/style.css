@@ -559,6 +559,9 @@ display: inline-block;
 .raiders .raiders-content-info .plan_item_inner{
 	line-height: 38px;
 }
+.raiders .raiders-content-info .plan_item_inner .plan_time{
+	font-size: 16px;
+}
 .raiders .raiders-content-info .plan_item_inner .plan_money{
 	float: right;
 }
