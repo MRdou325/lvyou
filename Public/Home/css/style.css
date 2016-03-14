@@ -560,10 +560,16 @@ display: inline-block;
 	line-height: 38px;
 }
 .raiders .raiders-content-info .plan_item_inner .plan_time{
-	font-size: 16px;
+	font-size: 18px;
+    line-height: 48px;
+    text-indent: 15px;
 }
 .raiders .raiders-content-info .plan_item_inner .plan_money{
 	float: right;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: right;
+    text-indent: 8px;
 }
 .raiders .raiders-content-info .plan_item_inner .plan_title{
 	font-size:16px;
@@ -571,4 +577,10 @@ display: inline-block;
 }
 .raiders .raiders-content-info .plan_item_inner .plan_desc{
 	font-size: 12px;
+    line-height: 22px;
+}
+
+.raiders .raiders-content-info .plan-item-head .plan-days,
+.raiders .raiders-content-info .plan_item_inner .plan_tag{
+    background: url("../images/i_timeline.png") 105px 0 repeat-y;
 }
