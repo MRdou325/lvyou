@@ -537,7 +537,6 @@ line-height: 55px;
 {
     background: #d5eefa;
     border-top: 1px solid #a1d7f1;
-    padding: 6px 15px 1px;
     line-height: 38px;
 }
 .raiders .raiders-content-info .plan-item-head .plan-date{
@@ -582,5 +581,12 @@ display: inline-block;
 
 .raiders .raiders-content-info .plan-item-head .plan-days,
 .raiders .raiders-content-info .plan_item_inner .plan_tag{
-    background: url("../images/i_timeline.png") 105px 0 repeat-y;
+    background: url("../images/i_timeline.png") 40% 0 repeat-y;
+}
+.raiders .raiders-content-info .plan_item_inner .plan_tag:after
+{ content:".";
+height:0;
+visibility:hidden;
+display:block;
+clear:both;
 }
