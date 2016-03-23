@@ -1,6 +1,10 @@
 /*
 * base
 */
+@media (min-width: 768px)
+.container {
+    width: 100%;
+}
 p{margin: 0;box-sizing:content-box; }
 a,a:link,a:hover{text-decoration: none;color: #5e5e5e}
 .radius-0{border-radius:0px;}
