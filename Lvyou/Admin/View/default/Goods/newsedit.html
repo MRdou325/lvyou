@@ -1,0 +1,188 @@
+<extend name="Public/base"/>
+  
+<block name="body">
+    <!-- ace styles -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=826e806b86676d155282de3d37188137"></script>
+    <script src="http://api.map.baidu.com/library/MarkerTool/1.2/src/MarkerTool_min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/CityList/1.4/src/CityList_min.js"></script>
+	
+    <script type="text/javascript" charset="utf-8" src="__ADDONS__/bdeditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__ADDONS__/bdeditor/ueditor.all.min.js"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="__ADDONS__/bdeditor/lang/zh-cn/zh-cn.js"></script>
+
+	<!--[if lte IE 8]>
+	  <link rel="stylesheet" href="__CSS__/ace-ie.min.css" />
+	<![endif]-->
+<h2>基础信息</h2>
+<hr>
+               <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>           
+                        <form class="form-horizontal" role="form" action="{:U('Goods/edit')}" method="post" enctype="multipart/form-data">
+                          {:setParam(array('goods_id'=>$goods['goods_id']))}
+                           <div class="form-group">
+	                          <label class="col-sm-2 control-label no-padding-right" for="form-field-1">图片<span style="color:#f00;">*</span></label>
+							  <div class="col-sm-10">
+									<input type="file" id="upload_picture_pic_url">
+									<input type="hidden" name="pic_url" id="pic_url" value="{$goods[pic_url]}"/>
+									<div class="upload-img-box">
+									<notempty name="goods.pic_url">
+										<div class="upload-pre-item"><img src="{$goods[pic_url]|get_image_url}"/></div>
+									</notempty>
+									</div>
+							  </div>	
+								<script type="text/javascript">
+								//上传图片
+							    /* 初始化上传插件 */
+								$("#upload_picture_pic_url").uploadify({
+							        "height"          : 30,
+							        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+							        "fileObjName"     : "download",
+							        "buttonText"      : "上传图片",
+							        "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+							        "width"           : 120,
+							        
+							        "removeTimeout"	  : 1,
+							        "fileTypeExts"	  : "*.jpg; *.png; *.gif;",
+							        "onUploadSuccess" : uploadPicture,
+							        "onFallback" : function() {
+							            alert('未检测到兼容版本的Flash.');
+							        }
+							    });
+								function uploadPicture(file, data){
+							    	var data = $.parseJSON(data);
+							    	var src = '';
+							    	
+							        if(data.status){
+							        	
+							        	$("#pic_url").val(data.path);
+							        	src = data.url || '__ROOT__' + data.path
+							        	$("#pic_url").parent().find('.upload-img-box').html(
+							        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
+							        	);
+							        } else {
+							        	updateAlert(data.info);
+							        	setTimeout(function(){
+							                $('#top-alert').find('button').click();
+							                $(that).removeClass('disabled').prop('disabled',false);
+							            },1500);
+							        }
+							    }
+								</script>
+							</div>
+                           
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right" for="form-field-1">标题<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-9"><input class="col-sm-12 form-control" type="text" name="title" value="{$goods['title']}"></div>
+
+                            </div>
+							<div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right" for="form-field-1">出处</label>
+                                <div class="col-sm-3"><input class="col-sm-12 form-control" type="text" name="title" value="{$goods['title']}"></div>
+
+								<label class="col-sm-1 control-label no-padding-right">选择分类<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-2">
+                                    <select class="col-sm-12 form-control" name="cate_id">
+                                        <option value="0">选择分类</option>
+                                        <volist name='category' id='data'>
+                                        <option value="{$data['id']}" <php>if($data['id'] == $goods["cate_id"]){</php>selected<php>}</php>>
+                                        	<for start="1" end="$data.level">
+                                        		<php>if($i+1 == $data['level']){</php>&nbsp;|-<php>}else{</php>&nbsp;&nbsp;&nbsp;<php>}</php>
+                                        	</for>	
+                                        		{$data['category_name']}</option>
+                                        </volist>                                        
+                                    </select>
+                                    <script type='text/javascript'>
+                                        $("select[name='sort_id'] option[value='<php>echo $goods[sort_id]</php>']").attr('selected','selected');
+                                    </script>
+                                </div>
+								
+								<label class="col-sm-1 control-label no-padding-right">审核状态<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-2">
+                                    <select class="col-sm-12 form-control" name="status">
+                                        <option selected="selected" value="1">审核通过</option>
+                                        <option value="0">待审核</option>
+                                    </select>
+                                    <script type='text/javascript'>
+                                        $("select[name='state'] option[value='<php>echo $goods[state]</php>']").attr('selected','selected');
+                                    </script>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">标签<span style="color:#f00;">*</span></label>
+                                <div class="col-sm-9">
+                                    <volist name="tags" id="tag">
+                                        <input type="checkbox" name="tag[]" value="{$tag.id}" <php>if(in_array($tag['id'], $mytag)){</php>checked<php>}</php>>{$tag.name}&nbsp;&nbsp;&nbsp;
+                                    </volist>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">概要 </label>
+                                <div class="col-sm-9">
+                                    <script id="summary" type="text/plain" style="width:100%;height:100px;"></script>
+                                </div>
+                            </div>
+							<div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">内容 </label>
+								<div class="col-sm-9">
+                                    <script id="content" type="text/plain" style="width:100%;height:300px;"></script>
+                                </div>
+							</div>
+                            <h2>Seo信息</h2>
+                            <hr>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">seo标题</label>    
+                                <div class="col-sm-9"><input class="col-sm-12 form-control" type="text" name="seo_title" value="{$goods['seo_title']}"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">seo关键字</label>   
+                                <div class="col-sm-9"><input class="col-sm-12 form-control" type="text" name="seo_keywords" value="{$goods['seo_keywords']}"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label no-padding-right">seo内容</label>    
+                                <div class="col-sm-9"><textarea  class="col-sm-12 form-control" name="seo_description" style="height:120px;">{$goods['seo_description']}</textarea></div>
+                            </div>
+
+                            <div class="clearfix form-actions">
+                                <div class="col-md-offset-4 col-md-4">
+                                    <button class="btn btn-info btn-block ajax-post" target-form="form-horizontal" type="submit">
+                                        <i class="icon-ok bigger-110"></i>
+                                        确认
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+						<script>
+							var summary = UE.getEditor('summary');
+							var content = UE.getEditor('content');
+						</script>
+   
+ </block>
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+<script>
+    $(function () {
+        $('input[type="file"]').ace_file_input({
+            no_file: 'No File ...',
+            btn_choose: 'Choose',
+            btn_change: 'Change',
+            droppable: false,
+            onchange: null,
+            thumbnail: false //| true | large
+                    //whitelist:'gif|png|jpg|jpeg'
+                    //blacklist:'exe|php'
+                    //onchange:''
+                    //
+        });
+        highlight_subnav('{:U('Goods/edit')}');
+    });
+    
+
+</script>

@@ -171,6 +171,31 @@ class GoodsController extends AdminController
         $this->assign('goods_type', M('goods_type')->find($Id));
         $this->display();
     }
+	
+	public function newsedit()
+	{
+		$Id = I('id');
+        if(IS_POST){
+            $p['title'] = I('title');
+            $p['cate_id'] = I('cate_id');
+            $p['pic'] = I('pic');
+			$p['summary'] = I('summary');
+			$p['content'] = I('content');
+			$p['source'] = I('source');
+			$p['status'] = I('status');
+			$p['time'] = I('status');
+            if (empty($Id)) {
+                M('news')->add($p);
+            } else {
+                M('news')->where("id='{$Id}'")->save($p);
+            }
+            $this->success('操作成功',U('news'));
+        }
+        $this->assign('id', $Id);
+        $this->assign('tags', M('tag')->select());
+        $this->assign('category', D('CategoryGoods')->getCategoryList());
+        $this->display();
+	}
 }
 
 ?>
