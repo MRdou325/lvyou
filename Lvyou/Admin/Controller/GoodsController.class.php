@@ -172,6 +172,12 @@ class GoodsController extends AdminController
         $this->display();
     }
 	
+	public function news()
+	{
+		$this->assign('List', M('news')->select());
+        $this->display();
+	}
+	
 	public function newsedit()
 	{
 		$Id = I('id');
@@ -183,7 +189,11 @@ class GoodsController extends AdminController
 			$p['content'] = I('content');
 			$p['source'] = I('source');
 			$p['status'] = I('status');
-			$p['time'] = I('status');
+			$p['tags'] = implode(",", I('tag'));
+			$p['time'] = date('Y-m-d H:i:s');
+			$p['seo_title'] = I('seo_title');
+			$p['seo_keywords'] = I('seo_keywords');
+			$p['seo_description'] = I('seo_description');
             if (empty($Id)) {
                 M('news')->add($p);
             } else {
@@ -192,6 +202,7 @@ class GoodsController extends AdminController
             $this->success('操作成功',U('news'));
         }
         $this->assign('id', $Id);
+		$this->assign('data', M('news')->find($Id));
         $this->assign('tags', M('tag')->select());
         $this->assign('category', D('CategoryGoods')->getCategoryList());
         $this->display();
