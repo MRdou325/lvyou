@@ -190,11 +190,14 @@ class GoodsController extends AdminController
 			$p['source'] = I('source');
 			$p['status'] = I('status');
 			$p['tags'] = implode(",", I('tag'));
-			$p['time'] = date('Y-m-d H:i:s');
+			$p['lasttime'] = date('Y-m-d H:i:s');
 			$p['seo_title'] = I('seo_title');
 			$p['seo_keywords'] = I('seo_keywords');
 			$p['seo_description'] = I('seo_description');
             if (empty($Id)) {
+				$p["add_id"] = session('user_auth_admin.uid');
+				$p["add_uname"] = session('user_auth_admin.username');
+				$p['time'] = date('Y-m-d H:i:s');
                 M('news')->add($p);
             } else {
                 M('news')->where("id='{$Id}'")->save($p);

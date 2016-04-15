@@ -46,10 +46,12 @@
                 <volist name="List" id="data">
                     <tr class="pointer even" title="">
                         <td><input class="ids" type="checkbox" name="id[]" value="{$data.goods_id}" /></td>
-                        <td>{$data['source'] ? '[转载]' : '[原创]'}<a href="{:U('extra',array("id" => $data['id']))}" target='_blank'>{$data['title']}</a></td>
+                        <td>
+							<a href="{:U('extra',array("id" => $data['id']))}" target='_blank'>{$data['source'] ? '[转载]' : '[原创]'}{$data['title']}</a>
+						</td>
                         <td>{$data['add_uname']}</td>
                         <td><a class="confirm ajax-get" href="{:U('Goods/status',array('id'=>$data['id'],'status'=>$data['status']))}" title="">{$data['status']?'<font color="green">开启</font>':'<font color="red">关闭</font>'}</a></td>
-                        <td>{:date('Y-m-d H:i:s',$data['time'])}</td>
+                        <td>创建:{$data['time']}</br>修改:{$data['lasttime']}</td>
                         <td> 
                             <a id="" href="{:U('Goods/newsedit',array('id'=>$data['id']))}" title="">编辑</a>
                             |
