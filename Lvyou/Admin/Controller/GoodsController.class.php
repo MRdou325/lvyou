@@ -210,6 +210,39 @@ class GoodsController extends AdminController
         $this->assign('category', D('CategoryGoods')->getCategoryList());
         $this->display();
 	}
+	
+	public function raidersedit()
+	{
+		$Id = I('id');
+        if(IS_POST){
+            $p['title'] = I('title');
+            $p['cate_id'] = I('cate_id');
+            $p['pic'] = I('pic');
+			$p['summary'] = I('summary');
+			$p['content'] = I('content');
+			$p['source'] = I('source');
+			$p['status'] = I('status');
+			$p['tags'] = implode(",", I('tag'));
+			$p['lasttime'] = date('Y-m-d H:i:s');
+			$p['seo_title'] = I('seo_title');
+			$p['seo_keywords'] = I('seo_keywords');
+			$p['seo_description'] = I('seo_description');
+            if (empty($Id)) {
+				$p["add_id"] = session('user_auth_admin.uid');
+				$p["add_uname"] = session('user_auth_admin.username');
+				$p['time'] = date('Y-m-d H:i:s');
+                M('raiders')->add($p);
+            } else {
+                M('raiders')->where("id='{$Id}'")->save($p);
+            }
+            $this->success('操作成功',U('raiders'));
+        }
+        $this->assign('id', $Id);
+		$this->assign('data', M('raiders')->find($Id));
+        $this->assign('tags', M('tag')->select());
+        $this->assign('category', D('CategoryGoods')->getCategoryList());
+        $this->display();
+	}
 }
 
 ?>
