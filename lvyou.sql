@@ -1,5 +1,5 @@
 ﻿# Host: 127.0.0.1  (Version: 5.5.5-10.1.9-MariaDB)
-# Date: 2016-04-22 17:48:48
+# Date: 2016-04-29 18:24:09
 # Generator: MySQL-Front 5.3  (Build 4.214)
 
 /*!40101 SET NAMES utf8 */;
@@ -808,7 +808,7 @@ CREATE TABLE `ly_news` (
 # Data for table "ly_news"
 #
 
-INSERT INTO `ly_news` VALUES (1,15,'这个是测试的','','<p><img src=\"/ueditor/php/upload/image/20160415/1460685741933746.jpg\" title=\"1460685741933746.jpg\" alt=\"baby-1.jpg\"/></p><p>测试简要</p>','<p>这个是测试内容<br/></p>',1,'没有','2016-04-15 10:04:29','title','keyword','description',NULL,0,'admin','2016-04-15 10:04:29');
+INSERT INTO `ly_news` VALUES (1,15,'这个是测试的','','<p><img src=\"/ueditor/php/upload/image/20160415/1460685741933746.jpg\" title=\"1460685741933746.jpg\" alt=\"baby-1.jpg\"/></p><p>测试简要</p>','<p>这个是测试内容<br/></p>',1,'没有','2016-04-15 10:04:29','title','keyword','description',NULL,0,'admin','2016-04-15 10:04:29'),(2,0,'','','','',1,'','2016-04-29 11:53:31','','','',NULL,1,'admin','2016-04-29 11:53:31');
 
 #
 # Structure for table "ly_orders"
