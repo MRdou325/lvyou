@@ -19,7 +19,7 @@
 	<link href="__CSS__/lhgcalendar.css" rel="stylesheet">
 	<script type="text/javascript">
 	function openlhg(){
-		$.calendar({ format:'yyyy-MM-dd- HH:mm:ss' });
+		$.calendar({ format:'yyyy-MM-dd HH:mm:ss', maxDate:'%y-%M-%d' });
 	}
 	</script>
 <h2>基础信息</h2>
@@ -101,7 +101,18 @@
 				</script>
 			</div>
 			
-			<label class="col-sm-1 control-label no-padding-right">审核状态<span style="color:#f00;">*</span></label>
+			<label class="col-sm-1 control-label no-padding-right">出发城市<span style="color:#f00;">*</span></label>
+			<div class="col-sm-2">
+				<input class="col-sm-12 form-control" type="text" name="city_start" value="{$data['city_start']}">
+			</div>
+			
+			<label class="col-sm-1 control-label no-padding-right">到达城市<span style="color:#f00;">*</span></label>
+			<div class="col-sm-2">
+				<input class="col-sm-12 form-control" type="text" name="city_end" value="{$data['city_end']}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label no-padding-right">审核状态<span style="color:#f00;">*</span></label>
 			<div class="col-sm-2">
 				<select class="col-sm-12 form-control" name="status">
 					<option selected="selected" value="1">审核通过</option>
@@ -111,14 +122,20 @@
 					$("select[name='state'] option[value='<php>echo $data[status]</php>']").attr('selected','selected');
 				</script>
 			</div>
-
+			
+			<label class="col-sm-1 control-label no-padding-right">交通方式<span style="color:#f00;">*</span></label>
+			<div class="col-sm-6">
+				<volist name="trans_traffic" id="traffic" key="k">
+					<input type="checkbox" name="traffic[]" value="{$k}" <php>if(in_array($k, implode(",", $data['traffic']))){</php>checked<php>}</php>>{$traffic}&nbsp;&nbsp;&nbsp;
+				</volist>
+			</div>
 		</div>
 
 		<div class="form-group">
 			<label class="col-sm-2 control-label no-padding-right">标签<span style="color:#f00;">*</span></label>
 			<div class="col-sm-9">
 				<volist name="tags" id="tag">
-					<input type="checkbox" name="tag[]" value="{$tag.id}" <php>if(in_array($tag['id'], $mytag)){</php>checked<php>}</php>>{$tag.name}&nbsp;&nbsp;&nbsp;
+					<input type="checkbox" name="tag[]" value="{$tag.id}" <php>if(in_array($tag['id'], implode(",", $data['tag']))){</php>checked<php>}</php>>{$tag.name}&nbsp;&nbsp;&nbsp;
 				</volist>
 			</div>
 		</div>
@@ -131,38 +148,44 @@
 			</div>
 		</div>
 		<h2>线路行程</h2>
+		<hr>
 		<div class="form-group">
 			<table class="col-sm-12">
 				<tr>
 					<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">时间</label></td>
 					<td class="col-sm-3">
-						<input class="form-control" id="lhgdate" onclick="openlhg()">
+						<input class="form-control" id="lhgdate" onclick="openlhg()" name="trans[date][]">
 					</td>
 					<td class="col-sm-5"></td>
-					<td class="col-sm-1"><div class="btn btn-info btn-block trans_del">移除</div></td>
+					<td class="col-sm-1"></td>
 				</tr>
 				<tr>
 					<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">地点</label></td>
 					<td class="col-sm-3">
-						<input class="form-control" id="lhgdate" onclick="openlhg()">
+						<input class="form-control" id="address"  name="trans[city][]" placeholder="城市">
+						<input class="form-control" id="address"  name="trans[addr][]" placeholder="地点">
 					</td>
 				</tr>
 				<tr>
 					<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">类型</label></td>
 					<td class="col-sm-3">
-						<input class="form-control" id="lhgdate" onclick="openlhg()">
+						<select class="form-control" id="type" name="trans[type][]">
+							<volist name="trans_type" id="transtype">
+							<option value="{$transtype.id}">{$transtype.name}</option> 
+							</volist>
+						</select>
 					</td>
 				</tr>
 				<tr>
 					<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">花费</label></td>
 					<td class="col-sm-3">
-						<input class="form-control" id="lhgdate" onclick="openlhg()">
+						<input class="form-control" id="cost"  name="trans[cost][]">
 					</td>
 				</tr>
 				<tr>
 					<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">介绍</label></td>
 					<td class="col-sm-9" colspan=3>
-						<input class="form-control" id="lhgdate" onclick="openlhg()">
+						<input class="form-control" id="content"  name="trans[content][]">
 					</td>
 					<td class="col-sm-1"></td>
 				</tr>
@@ -211,13 +234,17 @@
 	</script>
     <script>
 		function trans_add(){
-			var html = '<div class="form-group"><table class="col-sm-12"><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">时间</label></td><td class="col-sm-3"><input class="form-control" id="lhgdate" onclick="openlhg()"></td><td class="col-sm-5"></td><td class="col-sm-1"><div class="btn btn-info btn-block" onclick="trans_del()">移除</div></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">地点</label></td><td class="col-sm-3"><input class="form-control" id="lhgdate" onclick="openlhg()"></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">类型</label></td><td class="col-sm-3"><input class="form-control" id="lhgdate" onclick="openlhg()"></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">花费</label></td><td class="col-sm-3"><input class="form-control" id="lhgdate" onclick="openlhg()"></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">介绍</label></td><td class="col-sm-9" colspan=3><input class="form-control" id="lhgdate" onclick="openlhg()"></td><td class="col-sm-1"></td></tr></table></div>';
+			var html = '<div class="form-group"><table class="col-sm-12"><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">时间</label></td><td class="col-sm-3"><input class="form-control" id="lhgdate" onclick="openlhg()" name="trans[date][]"></td><td class="col-sm-5"></td><td class="col-sm-1"><div class="btn btn-info btn-block trans_del" onclick="trans_del(this)">移除</div></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">地点</label></td><td class="col-sm-3"><input class="form-control" id="address"  name="trans[city][]" placeholder="城市">		<input class="form-control" id="address"  name="trans[addr][]" placeholder="地点"></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">类型</label></td><td class="col-sm-3"><select class="form-control" id="type" name="trans[type][]">';
+			<volist name="trans_type" id="transtype">
+				html += '<option value="{$transtype.id}">{$transtype.name}</option>';
+			</volist>
+			html += '</select></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">花费</label></td><td class="col-sm-3"><input class="form-control" id="cost"  name="trans[cost][]"></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">介绍</label></td><td class="col-sm-9" colspan=3><input class="form-control" id="content"  name="trans[content][]"></td><td class="col-sm-1"></td></tr></table></div>';
 			$(".trans-add-btn").before(html);
 		}
-		$(".trans_del").bind("onclick", function(){
-		console.log(111);
-			$(this).parents(".form-group").remove();
-		});
+		
+		function trans_del(obj){
+			$(obj).parents(".form-group").remove();
+		}
 	</script>
  </block>
     <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">

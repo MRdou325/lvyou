@@ -211,26 +211,56 @@ class GoodsController extends AdminController
         $this->display();
 	}
 	
+	public function raiders()
+	{
+		$this->assign('List', M('raiders')->select());
+        $this->display();
+	}
+	
 	public function raidersedit()
 	{
 		$Id = I('id');
         if(IS_POST){
             $p['title'] = I('title');
             $p['cate_id'] = I('cate_id');
-            $p['pic'] = I('pic');
-			$p['summary'] = I('summary');
+            $p['pic_url'] = I('pic_url');
+			$p['city_start'] = I('city_start');
+			$p['city_end'] = I('city_end');
+			$p['traffic'] = implode(",", I('traffic'));
 			$p['content'] = I('content');
 			$p['source'] = I('source');
 			$p['status'] = I('status');
 			$p['tags'] = implode(",", I('tag'));
-			$p['lasttime'] = date('Y-m-d H:i:s');
+			$p['lasttime'] = time();
 			$p['seo_title'] = I('seo_title');
 			$p['seo_keywords'] = I('seo_keywords');
 			$p['seo_description'] = I('seo_description');
+			$trans = I('trans');
+			$trans_arr = array();
+			$days_count = $cost = 0;
+			foreach($trans['date'] as $k => $v)
+			{
+				if($v)
+				{
+					$days_count = $k;
+					$cost += $trans['cost'][$k];
+					$trans_arr[$k]['date'] = $v;
+					$trans_arr[$k]['city'] = $trans['city'][$k];
+					$trans_arr[$k]['addr'] = $trans['addr'][$k];
+					$trans_arr[$k]['type'] = $trans['type'][$k];
+					$trans_arr[$k]['cost'] = $trans['cost'][$k];
+					$trans_arr[$k]['content'] = $trans['content'][$k];
+				}
+			}
+			usort($trans_arr, function($a, $b){return $a['date'] > $b['date'] ? 1 : -1;});
+			$p['trans'] = json_encode($trans_arr);
+			$interval = date_diff(date_create($trans_arr[0]['date']), date_create($trans_arr[$days_count]['date']));
+			$p['days'] = $interval->format('%a') + 1;
+			$p['price'] = $cost;
             if (empty($Id)) {
 				$p["add_id"] = session('user_auth_admin.uid');
 				$p["add_uname"] = session('user_auth_admin.username');
-				$p['time'] = date('Y-m-d H:i:s');
+				$p['ctime'] = time();
                 M('raiders')->add($p);
             } else {
                 M('raiders')->where("id='{$Id}'")->save($p);
@@ -241,6 +271,33 @@ class GoodsController extends AdminController
 		$this->assign('data', M('raiders')->find($Id));
         $this->assign('tags', M('tag')->select());
         $this->assign('category', D('CategoryGoods')->getCategoryList());
+		$this->assign('trans_type', M('trans_type')->where(array('status' => 1))->select());
+		$this->assign('trans_traffic', C('TRANS_TRAFFIC'));
+        $this->display();
+	}
+	
+	public function transtype()
+	{
+		$this->assign("List", M('trans_type')->order("status desc")->select());
+        $this->display();
+	}
+	
+	public function transtypeedit()
+	{
+		$Id = I('id');
+        if(IS_POST){
+            $p['name'] = I('name');
+            $p['icon'] = I('icon');
+            $p['status'] = I('status');
+            if (empty($Id)) {
+                M('trans_type')->add($p);
+            } else {
+                M('trans_type')->where("id='{$Id}'")->save($p);
+            }
+            $this->success('操作成功',U('transtype'));
+        }
+        $this->assign('id', $Id);
+        $this->assign('data', M('trans_type')->find($Id));
         $this->display();
 	}
 }
