@@ -1,5 +1,5 @@
 ﻿# Host: 127.0.0.1  (Version: 5.5.5-10.1.9-MariaDB)
-# Date: 2016-05-03 18:13:03
+# Date: 2016-05-04 17:48:42
 # Generator: MySQL-Front 5.3  (Build 4.214)
 
 /*!40101 SET NAMES utf8 */;
@@ -1016,7 +1016,7 @@ INSERT INTO `ly_picture` VALUES (12,'/Uploads/goods_img/2015-08-10/55c80c005bb23
 
 DROP TABLE IF EXISTS `ly_raiders`;
 CREATE TABLE `ly_raiders` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '0',
   `title` varchar(200) NOT NULL DEFAULT '' COMMENT '宝贝名称',
   `cate_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1039,15 +1039,16 @@ CREATE TABLE `ly_raiders` (
   `city_start` varchar(255) NOT NULL DEFAULT '0',
   `city_end` varchar(255) DEFAULT NULL,
   `lasttime` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`Id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `trans` text,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 #
 # Data for table "ly_raiders"
 #
 
 /*!40000 ALTER TABLE `ly_raiders` DISABLE KEYS */;
-INSERT INTO `ly_raiders` VALUES (1,'0','测试',15,1,'admin',3,'5',567.00,'/Uploads/goods_img/2016-05-03/5728686e594c0.gif','<p>测试</p>',1,'测试','测试','测试测试',1462267229,0,0,0,'1,3','厦门','永安',1462267229);
+INSERT INTO `ly_raiders` VALUES (1,'0','测试',15,1,'admin',1,'5',10.00,'/Uploads/goods_img/2016-05-03/5728686e594c0.gif','<p>测试</p>',1,'测试','测试','测试测试',1462267229,0,0,0,NULL,'厦门','永安',1462339265,'[{\"date\":\"2016-05-01 13:20:07\",\"city\":\"\\u53a6\\u95e8\",\"addr\":\"\\u5148\\u540e\",\"type\":\"1\",\"cost\":\"0\",\"content\":\"\\u51fa\\u53d1\"},{\"date\":\"2016-05-01 13:20:35\",\"city\":\"\\u6c38\\u5b89\",\"addr\":\"\\u6842\\u534e\\u65b0\\u6751\",\"type\":\"1\",\"cost\":\"10\",\"content\":\"\\u5230\\u5bb6\\u5403\\u996d\"}]');
 /*!40000 ALTER TABLE `ly_raiders` ENABLE KEYS */;
 
 #

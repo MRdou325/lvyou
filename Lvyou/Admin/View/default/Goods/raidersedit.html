@@ -31,10 +31,10 @@
 		  <label class="col-sm-2 control-label no-padding-right" for="form-field-1">图片<span style="color:#f00;">*</span></label>
 		  <div class="col-sm-10">
 				<input type="file" id="upload_picture_pic_url">
-				<input type="hidden" name="pic_url" id="pic_url" value="{$goods[pic_url]}"/>
+				<input type="hidden" name="pic_url" id="pic_url" value="{$data[pic_url]}"/>
 				<div class="upload-img-box">
-				<notempty name="goods.pic_url">
-					<div class="upload-pre-item"><img src="{$goods[pic_url]|get_image_url}"/></div>
+				<notempty name="data.pic_url">
+					<div class="upload-pre-item"><img src="{$data[pic_url]|get_image_url}"/></div>
 				</notempty>
 				</div>
 		  </div>	
@@ -126,7 +126,7 @@
 			<label class="col-sm-1 control-label no-padding-right">交通方式<span style="color:#f00;">*</span></label>
 			<div class="col-sm-6">
 				<volist name="trans_traffic" id="traffic" key="k">
-					<input type="checkbox" name="traffic[]" value="{$k}" <php>if(in_array($k, implode(",", $data['traffic']))){</php>checked<php>}</php>>{$traffic}&nbsp;&nbsp;&nbsp;
+					<input type="checkbox" name="traffic[]" value="{$k}" <php>if(in_array($k, explode(",", $data['traffic']))){</php>checked<php>}</php>>{$traffic}&nbsp;&nbsp;&nbsp;
 				</volist>
 			</div>
 		</div>
@@ -135,7 +135,7 @@
 			<label class="col-sm-2 control-label no-padding-right">标签<span style="color:#f00;">*</span></label>
 			<div class="col-sm-9">
 				<volist name="tags" id="tag">
-					<input type="checkbox" name="tag[]" value="{$tag.id}" <php>if(in_array($tag['id'], implode(",", $data['tag']))){</php>checked<php>}</php>>{$tag.name}&nbsp;&nbsp;&nbsp;
+					<input type="checkbox" name="tag[]" value="{$tag.id}" <php>if(in_array($tag['id'], explode(",", $data['tag']))){</php>checked<php>}</php>>{$tag.name}&nbsp;&nbsp;&nbsp;
 				</volist>
 			</div>
 		</div>
@@ -149,6 +149,53 @@
 		</div>
 		<h2>线路行程</h2>
 		<hr>
+		<php>if($data){</php>
+		<php>$trans=json_decode($data['trans'], true);</php>
+			<volist name="trans" id="tran">
+				<div class="form-group">
+					<table class="col-sm-12">
+						<tr>
+							<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">时间</label></td>
+							<td class="col-sm-3">
+								<input class="form-control" id="lhgdate" onclick="openlhg()" name="trans[date][]" value="{$tran.date}">
+							</td>
+							<td class="col-sm-5"></td>
+							<td class="col-sm-1"><div class="btn btn-info btn-block trans_del" onclick="trans_del(this)">移除</div></td>
+						</tr>
+						<tr>
+							<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">地点</label></td>
+							<td class="col-sm-3">
+								<input class="form-control col-sm-6" style="width:50%;" id="address"  name="trans[city][]" placeholder="城市" value="{$tran.city}">
+								<input class="form-control col-sm-6" style="width:50%;" id="address"  name="trans[addr][]" placeholder="地点" value="{$tran.addr}">
+							</td>
+						</tr>
+						<tr>
+							<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">类型</label></td>
+							<td class="col-sm-3">
+								<select class="form-control" id="type" name="trans[type][]">
+									<volist name="trans_type" id="transtype">
+									<option value="{$transtype.id}" <php>if($transtype['id']==$tran['type']){echo 'selected';}</php>>{$transtype.name}</option> 
+									</volist>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">花费</label></td>
+							<td class="col-sm-3">
+								<input class="form-control" id="cost"  name="trans[cost][]" value="{$tran.cost}">
+							</td>
+						</tr>
+						<tr>
+							<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">介绍</label></td>
+							<td class="col-sm-9" colspan=3>
+								<input class="form-control" id="content"  name="trans[content][]" value="{$tran.content}">
+							</td>
+							<td class="col-sm-1"></td>
+						</tr>
+					</table>
+				</div>
+			</volist>
+		<php>}else{</php>
 		<div class="form-group">
 			<table class="col-sm-12">
 				<tr>
@@ -162,8 +209,8 @@
 				<tr>
 					<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">地点</label></td>
 					<td class="col-sm-3">
-						<input class="form-control" id="address"  name="trans[city][]" placeholder="城市">
-						<input class="form-control" id="address"  name="trans[addr][]" placeholder="地点">
+						<input class="form-control col-sm-6" style="width:50%;" id="address"  name="trans[city][]" placeholder="城市">
+						<input class="form-control col-sm-6" style="width:50%;" id="address"  name="trans[addr][]" placeholder="地点">
 					</td>
 				</tr>
 				<tr>
@@ -191,6 +238,7 @@
 				</tr>
 			</table>
 		</div>
+		<php>}</php>
 		<div class="form-group trans-add-btn">
 			<div class="col-sm-2"></div>
 			<div class="col-md-3">
@@ -234,7 +282,7 @@
 	</script>
     <script>
 		function trans_add(){
-			var html = '<div class="form-group"><table class="col-sm-12"><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">时间</label></td><td class="col-sm-3"><input class="form-control" id="lhgdate" onclick="openlhg()" name="trans[date][]"></td><td class="col-sm-5"></td><td class="col-sm-1"><div class="btn btn-info btn-block trans_del" onclick="trans_del(this)">移除</div></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">地点</label></td><td class="col-sm-3"><input class="form-control" id="address"  name="trans[city][]" placeholder="城市">		<input class="form-control" id="address"  name="trans[addr][]" placeholder="地点"></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">类型</label></td><td class="col-sm-3"><select class="form-control" id="type" name="trans[type][]">';
+			var html = '<div class="form-group"><table class="col-sm-12"><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">时间</label></td><td class="col-sm-3"><input class="form-control" id="lhgdate" onclick="openlhg()" name="trans[date][]"></td><td class="col-sm-5"></td><td class="col-sm-1"><div class="btn btn-info btn-block trans_del" onclick="trans_del(this)">移除</div></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">地点</label></td><td class="col-sm-3"><input class="form-control col-sm-6" style="width:50%;" id="address"  name="trans[city][]" placeholder="城市"><input class="form-control col-sm-6" style="width:50%;" id="address"  name="trans[addr][]" placeholder="地点"></td></tr><tr><td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">类型</label></td><td class="col-sm-3"><select class="form-control" id="type" name="trans[type][]">';
 			<volist name="trans_type" id="transtype">
 				html += '<option value="{$transtype.id}">{$transtype.name}</option>';
 			</volist>
