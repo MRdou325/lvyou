@@ -22,6 +22,15 @@
 		$.calendar({ format:'yyyy-MM-dd HH:mm:ss', maxDate:'%y-%M-%d' });
 	}
 	</script>
+<?php if($data['id']){ ?>
+<ul class="nav nav-tabs">
+   <li class="active"><a>基础信息</a></li>
+   <li><a href="{:U('Goods/raidersworkedit',array('id'=>$data['id']))}">准备功课</a></li>
+   <li><a href="{:U('Goods/raiderscommentedit',array('id'=>$data['id']))}">评论</a></li>
+</ul>
+</br>
+</br>
+<?php } ?>
 <h2>基础信息</h2>
 <hr>
     <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>           
@@ -188,7 +197,7 @@
 						<tr>
 							<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">介绍</label></td>
 							<td class="col-sm-9" colspan=3>
-								<input class="form-control" id="content"  name="trans[content][]" value="{$tran.content}">
+								<input class="form-control" name="trans[content][]" value="{$tran.content}">
 							</td>
 							<td class="col-sm-1"></td>
 						</tr>
@@ -232,7 +241,7 @@
 				<tr>
 					<td class="col-sm-2" align=right><label class="col-sm-12 control-label no-padding-right">介绍</label></td>
 					<td class="col-sm-9" colspan=3>
-						<input class="form-control" id="content"  name="trans[content][]">
+						<input class="form-control"  name="trans[content][]">
 					</td>
 					<td class="col-sm-1"></td>
 				</tr>
