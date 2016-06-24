@@ -3,27 +3,33 @@
   <php>if($is_home_banner == 1){</php>
 	<div class="col-xs-12 col-md-3 banner-navbar">
     <ul class="all-cate-box">
-      <volist name='category_List' id='cl'>
-      <php>if($cl['is_home_banner'] ==1){</php>
-        <li>
-          <a href="{:U('goods/cate',array('id'=>$cl['id']))}">{$cl.category_name}</a>
-          <i class="glyphicon glyphicon-chevron-right"></i>
-          <notempty name="cl['category_child']">            
-            <php>if($cl['is_home_banner_type']==2){</php>
-              <div class="sub-nav-0 visible-md visible-lg banner_sub_nav">
-              <include file="Public:banner_sub_nav" />
-            <php>}else if($cl['is_home_banner_type']==1){</php>
-              <div class="sub-nav-0 visible-md visible-lg banner_sub_nav_img">
+		<php>if(C(HOME_SHOW_RAIDERS_BANNER)){</php>
+		<li>
+			<a>旅游攻略</a>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			<div class="sub-nav-0 visible-md visible-lg banner_sub_nav">
+				<include file="Public:banner_sub_nav" />
+			</div>
+		</li>
+		<php>}</php>
+		<php>if(C(HOME_SHOW_GOODS_BANNER)){</php>
+		<li>
+			<a>旅游周边</a>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			<div class="sub-nav-0 visible-md visible-lg banner_sub_nav_img">
               <include file="Public:banner_sub_nav_img" />
-            <php>}else{</php>
-              <div class="sub-nav-0 visible-md visible-lg banner_sub_nav_txt">
+			</div>
+		</li>
+		<php>}</php>
+		<php>if(C(HOME_SHOW_NEWS_BANNER)){</php>
+		<li>
+			<a>旅游咨资讯</a>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			<div class="sub-nav-0 visible-md visible-lg banner_sub_nav_txt">
               <include file="Public:banner_sub_nav_txt" />
-            <php>}</php>
-            </div>
-          </notempty>
-        </li>
-      <php>}</php>
-      </volist>
+			</div>
+		</li>
+		<php>}</php>
     </ul>
 	</div>
 <php>}</php>
