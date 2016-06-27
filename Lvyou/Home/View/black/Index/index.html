@@ -8,50 +8,73 @@
         <div class="container">
         <div class="bg-white">
             <div class="col-md-3 col-xs-12 tuijian">
-                <h2>标题</h2>
-                <p>
-                    本可视化布局程序在HTML5浏览器上运行更加完美, 能实现自动本地化保存, 即使关闭了网页, 下一次打开仍然能恢复上一次的操作.
-                </p>
+                <div class="home_notice">
+					<h2>公告</h2>
+					<p>网站准备上线啦，快来一起分享你的旅游经历吧！！！</p>
+				</div>
+				<div class="home_notice">
+					<h2>公告</h2>
+					<p>网站准备上线啦，快来一起分享你的旅游经历吧！！！</p>
+				</div>
             </div>
-            <div class="col-md-6 col-xs-12 tuijian">
-                <h2>标题</h2>
-                <p>
-                    本可视化布局程序在HTML5浏览器上运行更加完美, 能实现自动本地化保存, 即使关闭了网页, 下一次打开仍然能恢复上一次的操作.
-                </p>
+            <div class="col-md-6 col-xs-12 home_news">
+				<span class="more">更多>></span>
+				<ul>
+					<li class="first">
+						<a>本可视化布局程序在HTML5浏览器上运行更加完美</a>
+						<p>本可视化布局程序在HTML5浏览器上运行更加完美, 能实现自动本地化保存, 即使关闭了网页, 下一次打开仍然能恢复上一次的操作.<span class="time">2015-05-12 08:30</span></p>
+					</li>
+					<li><a>本可视化布局程序在HTML5浏览器上运行更加完美</a><span class="time">2015-05-12 08:30</span></li>
+					<li><a>本可视化布局程序在HTML5浏览器上运行更加完美</a><span class="time">2015-05-12 08:30</span></li>
+					<li><a>本可视化布局程序在HTML5浏览器上运行更加完美</a><span class="time">2015-05-12 08:30</span></li>
+					<li><a>本可视化布局程序在HTML5浏览器上运行更加完美</a><span class="time">2015-05-12 08:30</span></li>
+					<li class="last"><a>本可视化布局程序在HTML5浏览器上运行更加完美</a><span class="time">2015-05-12 08:30</span></li>
+				</ul>
             </div>
             <div class="col-md-3 col-xs-12 tuijian">
-                <h2>标题</h2>
-                <ol>
-                    <li>
-                        新闻资讯
-                    </li>
-                    <li>
-                        体育竞技
-                    </li>
-                    <li>
-                        娱乐八卦
-                    </li>
-                    <li>
-                        前沿科技
-                    </li>
-                    <li>
-                        环球财经
-                    </li>
-                    <li>
-                        天气预报
-                    </li>
-                    <li>
-                        房产家居
-                    </li>
-                    <li>
-                        网络游戏
-                    </li>
-                </ol>
+                <div class="home_notice">
+					<h2>公告</h2>
+					<p>网站准备上线啦，快来一起分享你的旅游经历吧！！！</p>
+				</div>
+				<div class="home_hot_search">
+					<h2>热门搜索</h2>
+					<ol>
+						<li>
+							新闻资讯
+						</li>
+						<li>
+							体育竞技
+						</li>
+						<li>
+							娱乐八卦
+						</li>
+						<li>
+							前沿科技
+						</li>
+						<li>
+							环球财经
+						</li>
+						<li>
+							天气预报
+						</li>
+						<li>
+							房产家居
+						</li>
+						<li>
+							网络游戏
+						</li>
+					</ol>
+				</div>
             </div>
             <div class="clear"></div>
         </div>
         </div>
     </div>
+	<php>if($ad):</php>
+	<div class="ad_box1">
+		<a href="{$ad.url}" title="{$ad.title}"><img src="{$ad.src}" /></a>
+	</div>
+	<php>endif;</php>
     <div class="row margin-top-20">
         <div class="container">
             <div class="col-md-12 product-tabs">
